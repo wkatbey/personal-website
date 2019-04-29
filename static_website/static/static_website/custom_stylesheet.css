@@ -8,7 +8,7 @@
 }
 
 .hero-image {
-	background-image: url("../universal_img/cover-image-3.jpg");
+	background-image: url("./cover-image-3.jpg");
 	height: 1000px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -16,7 +16,7 @@
 } 
 
 .hero-sub-image {
-	background-image: url("../universal_img/cover-image-3.jpg");
+	background-image: url("./cover-image-3.jpg");
 	height: 679px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -77,7 +77,7 @@
 .card-header {font-size: 23px;}
 /*Resume-Exclusive Classes*/
 .resume-heading {font-size: 27px; font-weight: 300; text-align: center;}
-.self-portrait {height: 500px; width: auto; border-radius: 5px; content: url("../universal_img/pic_of_me.jpg")}
+.self-portrait {height: 500px; width: auto; border-radius: 5px; content: url("./pic_of_me.jpg")}
 
 
 .black-background {

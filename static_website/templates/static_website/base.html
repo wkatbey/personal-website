@@ -15,7 +15,7 @@
   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'static_website/custom_stylesheet.css' %}>
+  <link rel="stylesheet" href="{% static 'static_website/custom_stylesheet.css' %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body class="bg-light">
@@ -29,12 +29,12 @@
     <ul class="navbar-nav ml-auto navbar-right">
     {% block mobile-home-nav %}
       <li class="nav-item">
-        <a class="nav-link nav-text" href=""><i class="fas fa-home"></i> Home</a>
+        <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
       </li>
     {% endblock %}
     {% block mobile-resume-nav %}
       <li class="nav-item">
-        <a class="nav-link nav-text" href="pages/resume/resume.html"><i class="fas fa-file-signature"></i> Resume</a>
+        <a class="nav-link nav-text" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
       </li>
     {% endblock %}
       <li class = "nav-item">
@@ -55,12 +55,12 @@
         <ul class="navbar-nav ml-auto navbar-right">
         {% block desktop-home-nav %}
           <li class="nav-item">
-            <a class="nav-link nav-text" href=""><i class="fas fa-home"></i> Home</a>
+            <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
           </li>
         {% endblock %}
         {% block desktop-resume-nav %}
           <li class="nav-item">
-            <a class="nav-link nav-text" href="pages/resume/resume.html"><i class="fas fa-file-signature"></i> Resume</a>
+            <a class="nav-link nav-text" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
           </li>
         {% endblock %}
           <li class = "nav-item">

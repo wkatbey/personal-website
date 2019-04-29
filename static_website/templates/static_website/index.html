@@ -1,18 +1,22 @@
 {% extends './base.html' %}
-{% block body %}
 
 {% block mobile-home-nav %}
 <li class="nav-item active">
-    <a class="nav-link nav-text" href=""><i class="fas fa-home"></i> Home</a>
+    <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
 </li>
+{% endblock %}
+
+{% block hero-image-type %}
+<div class = "hero-image">
 {% endblock %}
 
 {% block desktop-home-nav %}
 <li class="nav-item active">
-    <a class="nav-link nav-text" href=""><i class="fas fa-home"></i> Home</a>
+    <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
 </li>
 {% endblock %}
 
+{% block body %}
 <main>
   <div class = "container">
     <div class = "heading-text" style="padding-bottom: 0px; padding-top: 50px" id="intro">
@@ -29,7 +33,7 @@
           like Angular and Vue. However, my qualities go beyond technical skillset.<br><br>
           Besides work, I have lots of hobbies and interests. I love Aviation, catch up on the latest in the industry, and use a flight simulator.
           <br><br>I love Architecture and Civil Engineering, and watch many documentaries depicting the construction of symbolic skyscrapers.
-          Additionally, I like photography (I took every photo on this website).
+          Additionally, I like photography (I took every photo on this website!).
         </div>
       </div>
     </div>
@@ -40,33 +44,35 @@
   		<div class = "heading-text">What am I like? </div>
 	    <div class="row">
 	      <div class="col-lg-2"></div>
-	      <div class="col-lg-6">
+	      <div class="col-lg-7">
 	        <div class="card-heading-text first-card-heading">>>> Problem Oriented</div>
 	        <div class = "card-body-text text-left">
-	          I'm a problem solver. I solve coding problems with a calm, cool attitude. I work on big projects, one problem at a time.
-	          I admit ignorance and take a step back to evaluate my problem-solving methodology, in coding and in life.
+	          As a junior developer, I encounter many problems while programming. My first solution is to reference
+            official documentation wherever I can, so long as it's relevant. From there I look for other sources to 
+            see if anybody else has encountered the same problem. Knowing how to search for what I'm looking for is a 
+            skill that took some time to develop.
 	        </div>
 	      </div>
 	    </div>
 	    <br>
 	    <div class="row">
 	      <div class="col-lg-3"></div>
-	      <div class="col-lg-6">
+	      <div class="col-lg-7">
 	        <div class="card-heading-text">>>> Self Motivated </div>
 	        <div class = "card-body-text text-left">
-	          I have an abundance of reasons to get myself up in the morning, without a cup of coffee. I motivate myself by envisioning my
-	          ideal lifestlye, personality, and work ethic.
+            I love programming and have the drive to work on many different projects. I love learning frameworks and using API's
+            I've never used before. Additionally, I like having a small project I can work on whenever I have the time.
 	        </div>
 	      </div>
 	    </div>
 	    <br>
 	    <div class="row">
 	      <div class="col-lg-4"></div>
-	      <div class="col-lg-6">
+	      <div class="col-lg-7">
 	        <div class="card-heading-text">>>> Ambitious</div>
 	        <div class = "card-body-text text-left">
-	          I'm working towards very serious goals in my life. I'm constantly looking for new projects to work on and new ideas to explore.
-	          If I have an idea, I pursue it aggressively.
+            Programming is a very serious tool and can be used to create a very large (and useful) project. I'd like to play
+            a part in the development of a great product.
 	        </div>
 	      </div>
 	    </div>
