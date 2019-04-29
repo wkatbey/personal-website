@@ -1,0 +1,127 @@
+{% extends './base.html' %}
+{% block body %}
+
+{% block mobile-home-nav %}
+<li class="nav-item active">
+    <a class="nav-link nav-text" href=""><i class="fas fa-home"></i> Home</a>
+</li>
+{% endblock %}
+
+{% block desktop-home-nav %}
+<li class="nav-item active">
+    <a class="nav-link nav-text" href=""><i class="fas fa-home"></i> Home</a>
+</li>
+{% endblock %}
+
+<main>
+  <div class = "container">
+    <div class = "heading-text" style="padding-bottom: 0px; padding-top: 50px" id="intro">
+      Allow me to introduce myself <img src="https://img.icons8.com/nolan/64/000000/identity-theft.png">
+    </div><hr><br>
+  	<div class="row">
+      <div class="col-lg-6 text-center">
+        <div class= "self-portrait"></div>
+      </div>
+     	<div class="col-lg-5">
+        <div class = "image-side-text">
+          My name is Wassim, and I study Computer Science at Wayne State University. <br><br>I write web applications using a variety of frameworks. 
+          I've used several frameworks for both academic, side, and professional work. I like learning about, and experimenting with new web technologies, 
+          like Angular and Vue. However, my qualities go beyond technical skillset.<br><br>
+          Besides work, I have lots of hobbies and interests. I love Aviation, catch up on the latest in the industry, and use a flight simulator.
+          <br><br>I love Architecture and Civil Engineering, and watch many documentaries depicting the construction of symbolic skyscrapers.
+          Additionally, I like photography (I took every photo on this website).
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="black-background">
+  	<div class="container-fluid">
+  		<div class = "heading-text">What am I like? </div>
+	    <div class="row">
+	      <div class="col-lg-2"></div>
+	      <div class="col-lg-6">
+	        <div class="card-heading-text first-card-heading">>>> Problem Oriented</div>
+	        <div class = "card-body-text text-left">
+	          I'm a problem solver. I solve coding problems with a calm, cool attitude. I work on big projects, one problem at a time.
+	          I admit ignorance and take a step back to evaluate my problem-solving methodology, in coding and in life.
+	        </div>
+	      </div>
+	    </div>
+	    <br>
+	    <div class="row">
+	      <div class="col-lg-3"></div>
+	      <div class="col-lg-6">
+	        <div class="card-heading-text">>>> Self Motivated </div>
+	        <div class = "card-body-text text-left">
+	          I have an abundance of reasons to get myself up in the morning, without a cup of coffee. I motivate myself by envisioning my
+	          ideal lifestlye, personality, and work ethic.
+	        </div>
+	      </div>
+	    </div>
+	    <br>
+	    <div class="row">
+	      <div class="col-lg-4"></div>
+	      <div class="col-lg-6">
+	        <div class="card-heading-text">>>> Ambitious</div>
+	        <div class = "card-body-text text-left">
+	          I'm working towards very serious goals in my life. I'm constantly looking for new projects to work on and new ideas to explore.
+	          If I have an idea, I pursue it aggressively.
+	        </div>
+	      </div>
+	    </div>
+	    <br><br><br>
+  	</div>  
+  </div>
+  <div class="container">
+    <div class = "heading-text">Discover my work <img src="https://img.icons8.com/nolan/64/000000/cafe.png"></div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="body-text">
+        Now that we're well acquainted, take some time to look through my work. If you're looking for my completed projects, in academia, workplace, and on the side,
+        then head over to <a style = "color: #696969" href = "pages/coding_portfolio.html">Coding Portfolio</a>. Additionally, if you're looking to see projects I'm currently working on, check out my
+        <a style = "color: #696969" href = "http://github.com/wkatbey">Github</a>. If you're an employer, looking for a detailed, technical skillset, you'll find all that and more in
+        <a style = "color: #696969" href = "pages/resume.html">Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+<!--   <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+           <p class="body-text">
+                  Additionally, I'm an amateur photographer. I don't know much about photography. I only really use my iPhone to take photos. If I find I'm not satisfied with the quality of image I'm getting from my current collection, I will learn more photography. However, for the time being, this is outside my scope, as I'm currently devoted to software engineering.
+              </p>
+              <p class="body-text">
+                  As a software engineer in practice, I'm resposible for writing a script that is elegant, not just functional. A script that is structured, that can be understood through class dependency, self-documenting code, and so on. I like to make things I like look appealing. 
+              </p>
+              <p class="body-text">
+                  There are several midtown/downtown areas within my backyard. In early May, 2018, I traveled outside my scope to New York City. I'm going to create an album of photos taken on that trip, 
+                  and display them here.
+              </p>
+        </div>
+    </div>
+  </div> -->
+  <div class="container">
+    <div class = "heading-text">Let's get in contact <img src="https://img.icons8.com/nolan/64/000000/contacts.png"></div>
+    <div class="row">
+      <div class = "col-lg-4">
+        <div class="card border-secondary mb-3" style="max-width: 25rem;">
+          <div class="card-header">Wassim Katbey</div>
+          <div class="card-body text-secondary">
+            <p class="card-text">Phone Number: (313)-421-0627</p>
+            <p class="card-text">Email: fv6124@wayne.edu</p>
+          </div>
+        </div>
+      </div>
+      <div class = "col-lg-7">
+        <div class = "body-text">
+          You can call me from Monday-Friday, 10AM-6PM. Additionally, you can send me an email any day of the week, I check my email often
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

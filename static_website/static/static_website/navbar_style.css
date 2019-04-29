@@ -1,0 +1,12 @@
+.nav-text  {
+	color: black;
+	/*font-family: "Roboto";*/
+	font-size: 20px;
+	font-weight: 700;
+	/*border-bottom: 0.25rem solid transparent;*/
+}
+
+.nav-text:hover {
+	color: gray;
+	/*border-bottom-color: gray;*/
+}

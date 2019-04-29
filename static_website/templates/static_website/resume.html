@@ -1,0 +1,197 @@
+{% extends './base.html' %}
+
+{% block mobile-resume-nav %}
+<li class="nav-item active">
+    <a class="nav-link nav-text" href="pages/resume/resume.html"><i class="fas fa-file-signature"></i> Resume</a>
+</li>
+{% endblock %}
+
+{% block hero-image-type %}
+<div class="hero-sub-image">
+{% endblock %}
+
+{% block desktop-resume-nav %}
+<li class="nav-item active">
+    <a class="nav-link nav-text" href="pages/resume/resume.html"><i class="fas fa-file-signature"></i> Resume</a>
+</li>
+{% endblock %}
+<div class = "hero-sub-image">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-transparent navbar-desktop">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto navbar-right">
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="../../index.html"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href=""><i class="fas fa-file-signature"></i> Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="../coding_portfolio/coding_portfolio.html"><i class="fas fa-laptop-code"></i> Coding Portfolio</a>
+        </li>
+        <li class = "nav-item">
+          <a class="nav-link nav-text" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class = "hero-small-text text-center">
+    <div class="hero-small-font">Resume & References</div>
+    <div class = "hero-small-sub-font">
+      Browse through my skills, education, and experience
+    </div>
+  </div>
+</div>
+
+{% block body %}
+  <main>
+    <div class="container">
+      <div class="heading-text">Objective</div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="resume-heading">Front-End, Back-End, or Full-Stack Development of Web Apps</div>
+        </div>
+      </div>
+      <div class="heading-text">Education</div>
+      <div class="row">
+        <div class = "col-lg-6">
+          <div class="text-center resume-heading">Wayne State University</div>
+          <div class="text-center resume-heading">B.S., Computer Science</div>
+        </div>
+        <div class="col-lg-6">
+          <div class="text-center resume-heading">Average GPA: 3.65</div>
+          <div class="text-center resume-heading">Major GPA: 4.0</div>
+        </div>
+      </div>
+      <!--<h3 class="text-center p-3">Important Coursework</h3>
+      <div class= "row">
+        <div class="col-lg-12">
+          <p class="text-center" style="font-size: 27px">Computer Science 1 - Object Oriented C++</p>
+          <p class="text-center" style="font-size: 27px">Computer Science 2 - Data Structures</p>
+        </div>
+      </div>-->
+      <div class="heading-text">Work-Related Projects</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="resume-heading"><a style="color: #696969">Call Harbor: Project 'Betroit'</a></div>
+          <br>
+          <div class="card-body-text">
+            As a Full-Stack Developer, I developed a web application whose purpose is to automate the new-client process. 
+            There are two interfaces to the application: Client-Side, and Staff-Side.
+            <br><br>
+            From the Staff-Side, a staff member would put the client's requests into a specialized form, generate a PIN for the client, and send the client over to their side of the application. 
+            <br><br>
+            From the Client-Side, the client uses the pin to log into a customized form whereby they enter in their client data. Furthermore, this side of the application utilizes REST API services. The Client-Side app is complex, tabbed, and uses an extensive verification process. 
+            <br><br>
+            <div class="body-text">Written in AngularJS, PHP, & mySQL</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="resume-heading padding-on-mobile text-center"><a style = "color: #696969">Static Website - Contents Protected</a></div>
+          <br>
+          <div class="card-body-text">
+            Designed a static page during my employment at Active Solutions Group. Consists of a Landing Page, Products page, Team page, and Contact Us page. 
+            The Contact Us page sends an email to staff through PHP. Additionally, Contact Us makes use of Google’s Maps Javascript API. 
+            <br><br>
+          <div class="body-text">Written in HTML, CSS, Boostrap, Javascript, and PHP</div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="heading-text pb-0">Open-Source (Side) Projects</div>
+      <div class="text-center lead">Click on a project's name to view its Github</div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+          <div class="resume-heading padding-on-mobile text-center">
+            <a href="https://github.com/DSWhite96/Campus_Price_And_Dice" style = "color: #696969">Campus Price & Dice</a>
+          </div>
+          <br>
+          <div class="card-body-text">
+            Working together with a team to develop a web application that allows users to compare prices and view food items 
+            among restaurants on campus.
+            <br><br>
+          <div class="body-text language-text">Written in Django, Vue.js</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="resume-heading  text-center">
+            <a href="https://github.com/wkatbey/static_portfolio" style = "color: #696969">Online Portfolio</a>
+          </div>
+          <br>
+          <div class="card-body-text">
+            Wrote a website to host my resume and projects. Includes an introduction and a resume page. The contents of the website
+            are responsive to an extent.
+            <br><br>
+            <div class="body-text">Written in HTML, CSS, Bootstrap</div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-2"></div>
+         <div class="col-lg-4">
+            <div class="resume-heading  text-center">
+              <a href="https://github.com/wkatbey/House-Management-Application" style = "color: #696969">House Management</a>
+            </div>
+            <br>
+            <div class="card-body-text">
+              User can create a house with several appliances (doors, lights, air conditioners). Following
+              creation, a house’s appliances can be manipulated.
+              <br><br>
+              <div class="body-text">Written in C++, runs in the console</div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="resume-heading padding-on-mobile text-center">
+              <a href="https://github.com/wkatbey/Student-Teacher-Database" style = "color: #696969">Student/Teacher App</a>
+            </div>
+            <br>
+            <div class="card-body-text">
+              User can create, save, and load student and teacher database. Bank Account functionality
+              implemented. Developed as a Term Project for Computer Science 1.
+              <br><br>
+            <div class="body-text language-text">Written in C++, runs in the console</div>
+            </div>
+          </div>
+         </div>
+      </div>
+      <br>
+      <div class="heading-text">My Skillset</div>
+      <div class="text-center body-text">
+        <p>C++ & Object Oriented Programming</p>
+        <p>HTML</p>
+        <p>CSS, Bootstrap, Javascript</p>
+        <p><strong>Angular</strong></p>
+        <p><strong>Vue.js</strong></p>
+        <p><strong>Django</strong></p>
+        <p><strong>PHP & MySQL</strong></p>
+        <p>Git Bash</p>
+        <p>Algorithm Analysis</p>
+        <p>Data Structures</p>
+      </div>
+      <div class="heading-text">References</div>
+      <div class = "row text-center body-text">
+        <div class="col-lg-4">
+              <p>Daniel Ouellette</p>
+              <p>Daniel Grosu</p>
+              <p>Md Mehedi Hasan</p>
+        </div>
+        <div class="col-lg-4 hide-on-mobile">
+              <p>Wayne State University</p>
+              <p>Wayne State University</p>
+              <p>Wayne State University</p>
+        </div>
+        <div class="col-lg-4 hide-on-mobile">
+              <p>fx9807@wayne.edu</p>
+              <p>dgrosu@wayne.edu</p>
+              <p>md.mehedi.hasan@wayne.edu</p>
+        </div>
+        
+      </div>
+    </div>
+</main>
+{% endblock %}
