@@ -16,6 +16,7 @@
 </li>
 {% endblock %}
 
+
 {% block body %}
 <main>
   <div class = "container">
@@ -87,7 +88,7 @@
         Now that we're well acquainted, take some time to look through my work. If you're looking for my completed projects, in academia, workplace, and on the side,
         then head over to <a style = "color: #696969" href = "pages/coding_portfolio.html">Coding Portfolio</a>. Additionally, if you're looking to see projects I'm currently working on, check out my
         <a style = "color: #696969" href = "http://github.com/wkatbey">Github</a>. If you're an employer, looking for a detailed, technical skillset, you'll find all that and more in
-        <a style = "color: #696969" href = "pages/resume.html">Resume</a>
+        <a style = "color: #696969" href = "{% url 'static_website:resume' %}">Resume</a>
         </div>
       </div>
     </div>

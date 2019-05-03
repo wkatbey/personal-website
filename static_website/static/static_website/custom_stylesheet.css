@@ -119,9 +119,9 @@
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
 
-  	div.hero-image {
+  div.hero-image {
   		height: 45rem;
-  	}
+  }
 	div.hero-sub-image {
 		height: 40rem;
 	}
