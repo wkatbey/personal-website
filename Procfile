@@ -1,1 +1,1 @@
-web: gunicorn personal_website/wsgi.py
+web: gunicorn personal_website.wsgi
