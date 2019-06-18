@@ -1,2 +1,19 @@
-hello
+{% extends 'static_website/base.html' %}
 
+{% block hero-image-type %}
+<div class = "hero-sub-image">
+{% endblock %}
+
+{% block hero-image-text %}
+<div class = "hero-text text-center">
+<div class="hero-large-font">SkyBlue Blogging</div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class = "heading-text" style="padding-bottom: 0px; padding-top: 50px" id="intro">
+      A Programmer's Haven <img src="https://img.icons8.com/nolan/64/000000/speech-bubble.png">
+    </div>
+</div>
+{% endblock %}

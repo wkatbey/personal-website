@@ -1,1 +1,23 @@
-Creating..
+{% extends 'static_website/base.html' %}
+
+{% block hero-image-type %}
+<div class = "hero-sub-image">
+{% endblock %}
+
+{% block hero-image-text %}
+<div class = "hero-text text-center">
+<div class="hero-large-font">Create a Blog</div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class = "heading-text" style="padding-bottom: 0px; padding-top: 50px" id="intro">
+      A Programmer's Haven <img src="https://img.icons8.com/nolan/64/000000/speech-bubble.png">
+    </div>
+    <div class="form-group">
+        {{ blog_creation_form.title.label_tag }}
+        {{ blog_creation_form.title }}
+    </div>
+</div>
+{% endblock %}
