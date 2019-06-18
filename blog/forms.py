@@ -7,6 +7,6 @@ class BlogForm(ModelForm):
         model = BlogEntry
         fields = [
             'title',
-            'primary_image',
+            #'primary_image',
             'text_entry'
         ]
