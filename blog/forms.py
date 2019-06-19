@@ -10,3 +10,18 @@ class BlogForm(ModelForm):
             #'primary_image',
             'text_entry'
         )
+
+        widgets = {
+            'text_entry': forms.Textarea(
+                attrs = {
+                    'cols': 80, 
+                    'rows': 20,
+                    'class': 'form-control'
+                }
+            ),
+            'title': forms.TextInput(
+                attrs = {
+                    'class': 'form-control'
+                }
+            )
+        }
