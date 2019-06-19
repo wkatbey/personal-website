@@ -1,0 +1,3 @@
+var blogCreationApp = new Vue({
+    
+})
