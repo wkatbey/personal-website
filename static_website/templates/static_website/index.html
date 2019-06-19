@@ -1,5 +1,19 @@
 {% extends './base.html' %}
 
+{% block hero-image-text %}
+<div class = "hero-text text-center">
+  <div class="hero-large-font">Wassim Katbey</div>
+  <div class = "hero-large-sub-font">
+    Full-Stack Web Developer, and Hobbyist
+  </div>
+  <div class="button-cover">
+    <form action="#intro">
+     <br><button type="submit" id = "introButton" class="btn-hover color-9">Meet Me</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
 {% block mobile-home-nav %}
 <li class="nav-item active">
     <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
@@ -93,22 +107,6 @@
     </div>
   </div>
   <br>
-<!--   <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-           <p class="body-text">
-                  Additionally, I'm an amateur photographer. I don't know much about photography. I only really use my iPhone to take photos. If I find I'm not satisfied with the quality of image I'm getting from my current collection, I will learn more photography. However, for the time being, this is outside my scope, as I'm currently devoted to software engineering.
-              </p>
-              <p class="body-text">
-                  As a software engineer in practice, I'm resposible for writing a script that is elegant, not just functional. A script that is structured, that can be understood through class dependency, self-documenting code, and so on. I like to make things I like look appealing. 
-              </p>
-              <p class="body-text">
-                  There are several midtown/downtown areas within my backyard. In early May, 2018, I traveled outside my scope to New York City. I'm going to create an album of photos taken on that trip, 
-                  and display them here.
-              </p>
-        </div>
-    </div>
-  </div> -->
   <div class="container">
     <div class = "heading-text">Let's get in contact <img src="https://img.icons8.com/nolan/64/000000/contacts.png"></div>
     <div class="row">
