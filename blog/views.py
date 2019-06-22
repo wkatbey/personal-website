@@ -1,38 +1,34 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views import View
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
 from django.http import HttpResponseRedirect
-from blog.forms import BlogForm
+from blog.forms import BlogEntryForm
 from blog.models import BlogEntry
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
-class IndexView(View):
-    def get(self, request):
-        blogs = BlogEntry.objects.all()
-
-        context = {
-            'blogs': blogs
-        }
-        
-        return render(request, 'blog/index.html', context)
-
-class CreateBlogView(FormView):
-    template_name = 'blog/create-blog.html'
-    form_class = BlogForm
-    success_url = 'blog/index.html'
-
+class BlogEntryList(ListView):
+    model = BlogEntry
+    context_object_name = 'blog_entries'
+    paginate_by = 100
+    
+    # In case we need to define new dictionary elements
+    # in the context
     def get_context_data(self, **kwargs):
-        data = super(CreateBlogView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
+        return context
 
-        data['blog_form'] = data.get('form')
+class BlogEntryCreate(CreateView):
+    model = BlogEntry
+    form_class = BlogEntryForm
 
-        return data
+class BlogEntryUpdate(UpdateView):
+    model = BlogEntry
+    fields = ['title', 'text_entry']
 
-    def form_valid(self, form):
-        blog_creation_form = form
+class BlogEntryDelete(DeleteView):
+    model = BlogEntry
+    success_url = reverse_lazy('blog:blog_list')
 
-        if blog_creation_form.is_valid():
-            blog_creation_form.save()
 
-        return HttpResponseRedirect(reverse('blog:blog'))

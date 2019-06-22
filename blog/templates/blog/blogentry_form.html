@@ -18,18 +18,18 @@
 {% endblock %}
 
 {% block body %}
-<div class="container" id="blog_creation_app">
+<div class="container">
     <div class = "heading-text" style="padding-bottom: 0px; padding-top: 50px" id="intro">
       Write Away! <img src="https://img.icons8.com/nolan/64/000000/speech-bubble.png">
     </div>
-    <form method='POST' action="{% url 'blog:create' %}">
+    <form method='POST'>
       {% csrf_token %}
       <div class="form-group">
-          {{ blog_form.title.label_tag }}
-          {{ blog_form.title }}
+          {{ form.title.label_tag }}
+          {{ form.title }}
       </div>
       <div class="form-group">
-        {{ blog_form.text_entry }}
+        {{ form.text_entry }}
       </div>
       <div class="row">
         <div class="col-lg-6">

@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from blog.models import BlogEntry
 from datetime import datetime
 
-class BlogForm(ModelForm):
+class BlogEntryForm(ModelForm):
     class Meta:
         model = BlogEntry
         fields = (
