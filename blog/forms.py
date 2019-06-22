@@ -28,11 +28,11 @@ class BlogForm(ModelForm):
         }
 
     def save(self, commit=True):
-        instance = super(BlogForm, self).save(commit=False)
-        instance.date_of_submission = datetime.now()
-        instance.date_updated = datetime.now()
+        blog_instance = super(BlogForm, self).save(commit=False)
+        blog_instance.date_of_submission = datetime.now()
+        blog_instance.date_updated = datetime.now()
 
         if commit:
-            instance.save()
+            blog_instance.save()
         
-        return instance
+        return blog_instance
