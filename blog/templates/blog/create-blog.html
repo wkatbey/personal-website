@@ -3,6 +3,7 @@
 
 {% block head_elements %}
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+<script src='https://cdn.tiny.cloud/1/9lidlfl9gfd74zusr0iykq72dtxk48gnba2vupju5j0gdmfs/tinymce/5/tinymce.min.js'>
 <script>tinymce.init({selector:'textarea'});</script>
 {% endblock %}
 
@@ -21,13 +22,21 @@
     <div class = "heading-text" style="padding-bottom: 0px; padding-top: 50px" id="intro">
       Write Away! <img src="https://img.icons8.com/nolan/64/000000/speech-bubble.png">
     </div>
-    <div class="form-group">
-        {{ blog_creation_form.title.label_tag }}
-        {{ blog_creation_form.title }}
-    </div>
-    <div class="form-group">
-      {{ blog_creation_form.text_entry }}
-    </div>
+    <form method='POST' action="{% url 'blog:create' %}">
+      {% csrf_token %}
+      <div class="form-group">
+          {{ blog_creation_form.title.label_tag }}
+          {{ blog_creation_form.title }}
+      </div>
+      <div class="form-group">
+        {{ blog_creation_form.text_entry }}
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <button type="submit" class="btn btn-outline-primary">Create Post</button>
+        </div>
+      </div>
+    </form>
 </div>
 {% endblock %}
 
