@@ -13,5 +13,5 @@ class BlogEntry(models.Model):
     text_entry = HTMLField()
     date_of_submission = models.DateTimeField()
     has_been_modified = models.BooleanField(default=False)
-    date_updated = models.DateTimeField()
+    date_updated = models.DateTimeField(default=None)
 
