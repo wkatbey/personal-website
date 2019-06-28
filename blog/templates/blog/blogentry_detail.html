@@ -1,0 +1,26 @@
+{% extends 'static_website/base.html' %}
+
+{% block hero-image-type %}
+<div class = "hero-sub-image">
+{% endblock %}
+
+{% block hero-image-text %}
+<div class = "hero-text text-center">
+<div class="hero-large-font">SkyBlue Blogging</div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class = "heading-text" style="padding-bottom: 0px; padding-top: 50px" id="intro">
+     {{ blog_entry.title }}
+    </div>
+    {% for blog in blog_entries %}
+    <div class="row">
+      <div class="col-lg-6">
+        {{ blog_entry.text_entry }}
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

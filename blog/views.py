@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.views import View
 from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
 from blog.forms import BlogEntryForm
 from blog.models import BlogEntry
@@ -19,13 +20,17 @@ class BlogEntryList(ListView):
         context = super().get_context_data(**kwargs)
         return context
 
+class BlogEntryDetailView(DetailView):
+    model = BlogEntry
+    context_object_name = 'blog_entry'
+
 class BlogEntryCreate(CreateView):
     model = BlogEntry
     form_class = BlogEntryForm
 
 class BlogEntryUpdate(UpdateView):
     model = BlogEntry
-    fields = ['title', 'text_entry']
+    form_class = BlogEntryForm
 
 class BlogEntryDelete(DeleteView):
     model = BlogEntry

@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
+from django.urls import reverse, reverse_lazy
 
 
 class BlogEntry(models.Model):
@@ -15,3 +16,5 @@ class BlogEntry(models.Model):
     has_been_modified = models.BooleanField(default=False)
     date_updated = models.DateTimeField(default=None)
 
+    def get_absolute_url(self):
+        return reverse_lazy('blog-detail', kwargs={'pk': self.pk})
