@@ -1,0 +1,22 @@
+{% extends 'static_website/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block hero-image-type %}
+<div class = "hero-sub-image">
+{% endblock %}
+
+{% block hero-image-text %}
+<div class = "hero-text text-center">
+<div class="hero-large-font">User Registration</div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        {{ user_registration_form | crispy }}
+    </form>
+</div>
+{% endblock %}

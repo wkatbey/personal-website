@@ -15,6 +15,3 @@ class BlogEntry(models.Model):
     date_of_submission = models.DateTimeField()
     has_been_modified = models.BooleanField(default=False)
     date_updated = models.DateTimeField(default=None)
-
-    def get_absolute_url(self):
-        return reverse_lazy('blog-detail', kwargs={'pk': self.pk})
