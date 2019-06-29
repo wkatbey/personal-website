@@ -238,7 +238,10 @@
 	div.resume-heading {font-size: 20px; text-align: left;}
 	div.padding-on-mobile {padding-top: 10px;}
 	div.hide-on-mobile {display: none;}
-
+	div.hero-text {
+		position: relative;
+		transform: translate(5rem, 6rem);
+	} 
 }
 
 @media (min-device-width: 992px) and (max-device-width: 1199.98px) { 

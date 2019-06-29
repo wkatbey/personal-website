@@ -7,7 +7,7 @@ from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
 
 class UserRegistrationView(View):
@@ -32,3 +32,24 @@ class UserRegistrationView(View):
         }
 
         return render(request, 'user/register.html', context)
+
+class UserLoginView(View):
+    def get(self, request):
+        authentication_form = AuthenticationForm()
+
+        context = {
+            'authentication_form': authentication_form
+        }
+
+        return render(request, 'user/login.html', context)
+
+    def post(self, request):
+        authentication_form = AuthenticationForm(request.POST)
+
+        if authentication_form.is_valid():
+            user = authentication_form.get_user
+            login(request, user)
+            
+            return HttpResponseRedirect(reverse_lazy('blog:blog_list'))
+        
+        return HttpResponseRedirect(reverse_lazy('user:login'))
