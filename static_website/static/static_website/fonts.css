@@ -1,3 +1,7 @@
+:root {
+    --gray-link: #696969;
+}
+
 .hero-large-heading {
     font-size: 4.375rem;
     font-weight: 300;
@@ -14,7 +18,12 @@
 
 .heading-text {
     font-size: 2rem;
-    font-weight: 300
+    font-weight: 300;
+}
+
+.subheading-text {
+    font-weight: 300;
+    font-size: 1.55rem;
 }
 
 .reading-font {
@@ -31,6 +40,11 @@
     font-size: 1.75rem;
 }
 
-.attribute-body-text {
+.attribute-body-text,
+.card-body-text {
     font-size: 1rem;
+}
+
+.gray-link {
+    color: var(--gray-link);
 }
