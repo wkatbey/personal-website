@@ -21,7 +21,6 @@ html {
 
 .hero-text {
     transform: translateY(10rem);
-    color: #000;
 }
 
 .hero-small-text {
@@ -185,8 +184,7 @@ html {
         text-align: left;
     }
     div.hero-text {
-        position: relative;
-        transform: translateY(4rem);
+        transform: translate(1rem, 1rem);
     }
     div.hero-small-text {
         position: relative;
@@ -337,8 +335,7 @@ html {
         display: none;
     }
     div.hero-text {
-        position: relative;
-        transform: translate(5rem, 6rem);
+        transform: translate(1rem, 1rem);
     }
 }
 
@@ -373,9 +370,7 @@ html {
         text-align: left;
     }
     div.hero-text {
-        top: 20%;
-        left: 30%;
-        transform: translate(-30%, -20%);
+        transform: translate(3, 3);
     }
     div.hero-small-text {
         top: 50%;

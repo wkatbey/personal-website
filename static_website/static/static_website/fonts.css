@@ -2,6 +2,16 @@
     --gray-link: #696969;
 }
 
+.hero-home-heading {
+    font-weight: 300;
+    font-size: 4rem;
+}
+
+.hero-home-subheading {
+    font-weight: 300;
+    font-size: 2rem;
+}
+
 .hero-large-heading {
     font-size: 4.375rem;
     font-weight: 300;
