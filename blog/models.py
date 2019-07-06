@@ -8,10 +8,10 @@ class BlogEntry(models.Model):
         max_length=100,
         verbose_name="Title"
     )
-    '''primary_image = models.ImageField(
-        verbose_name="primary_image"
-    )'''
     text_entry = HTMLField()
     date_of_submission = models.DateTimeField()
     has_been_modified = models.BooleanField(default=False)
     date_updated = models.DateTimeField(default=None)
+
+    def get_absolute_url(self):
+        return reverse('blog:blog-detail', args=[self.id])

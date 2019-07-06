@@ -1,0 +1,16 @@
+.hero-blog-image {
+    background-image: url("./blue-sky.jpg");
+    height: 30rem;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-blog-small-image {
+    background-image: url("./blue-sky.jpg");
+    height: 16rem;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

@@ -4,7 +4,7 @@ html {
 
 .hero-image {
     background-image: url("./cover-image-3.jpg");
-    height: 1000px;
+    height: 62.5rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,11 +12,10 @@ html {
 
 .hero-sub-image {
     background-image: url("./cover-image-3.jpg");
-    height: 679px;
+    height: 10rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
 }
 
 .hero-text {

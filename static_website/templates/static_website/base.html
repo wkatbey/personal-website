@@ -25,8 +25,6 @@
   {% endblock %}
 </head>
 <body class="bg-light">
-
-
 <nav class="navbar navbar-expand-lg navbar-dark navbar-blue navbar-mobile">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobileContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -61,13 +59,26 @@
         <ul class="navbar-nav ml-auto navbar-right">
         {% block desktop-home-nav %}
           <li class="nav-item">
-            <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
+            <a class="nav-link nav-text" href="{% url 'static_website:index' %}">
+              <i class="fas fa-home"></i> Home
+            </a>
           </li>
         {% endblock %}
         {% block desktop-resume-nav %}
           <li class="nav-item">
             <a class="nav-link nav-text" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
           </li>
+        {% endblock %}
+        {% block blog-list-link %}
+          <li class="nav-item">
+            <a class="nav-link nav-text" href="{% url 'blog:blog-list' %}">
+              <i class="fas fa-blog"></i> SkyBlue Blogging
+            </a>
+          </li>
+        {% endblock %}
+        {% block blog-profile-link %}
+        {% endblock %}
+        {% block blog-create-link %}
         {% endblock %}
           <li class = "nav-item">
             <a class="nav-link nav-text" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
@@ -89,25 +100,25 @@
 
 <footer class="footer" style = "margin-top: 5%">
     <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <a class="text-muted" href="https://icons8.com/icon/77154/identity-theft">
-          Check out Icons8! I used their icons
-        </a>
-      </div>
+    {% block custom_footer_elements %}
+      <div class="row">
+        <div class="col-lg-6">
+          <a class="text-muted" href="https://icons8.com/icon/77154/identity-theft">
+            Check out Icons8! I used their icons
+          </a>
+        </div>
      </div>
-     <div class="row">
+    {% endblock %}
+    <div class="row">
       <div class="col-lg-6">
         <span class="text-muted">Copyright &copy Wassim Katbey 2018</span>
       </div>
-     </div>
-     <br>
+    </div>
+    <br>
    </div>
  </footer>
 
- {% block footer_elements %}
 
- {% endblock %}
 
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
 </body>
