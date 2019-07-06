@@ -33,7 +33,13 @@
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <button type="submit" class="btn btn-outline-primary">Create Post</button>
+          <button type="submit" class="btn btn-outline-primary"> 
+            {% if form.title %}
+              Save Changes
+            {% else %}
+              Create Post
+            {% endif %}
+          </button>
         </div>
       </div>
     </form>
