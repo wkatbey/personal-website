@@ -9,6 +9,7 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
+from django.contrib import messages
 
 class UserRegistrationView(View):
     def post(self, request):
@@ -23,6 +24,8 @@ class UserRegistrationView(View):
             login(request, user)
 
             return HttpResponseRedirect(reverse_lazy('blog:blog-list'))
+
+        return HttpResponseRedirect(reverse_lazy('user:register'))
 
     def get(self, request):
         user_registration_form = UserCreationForm()

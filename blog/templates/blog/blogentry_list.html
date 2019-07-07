@@ -1,12 +1,5 @@
-{% extends 'static_website/base.html' %} 
+{% extends 'blog/blog_base.html' %} 
 {% load static %} 
-
-{% block head_elements %}
-<link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'blog/spacing.css' %}"> 
-<link rel="stylesheet" href="{% static 'blog/hero-image.css' %}"> 
-<link rel="stylesheet" href="{% static 'blog/fonts.css' %}"> 
-{% endblock %} 
 
 {% block hero-image-type %}
 <div class="hero-blog-image">
@@ -21,70 +14,44 @@
     </div>
 {% endblock %} 
 
-{% block body %}
-    <div class="container">
-        <p class="heading-text padding-top padding-bottom text-center">
-            Portal 
-            <span class="blog-heading-icon">
-                <i class="fas fa-wine-glass-alt"></i>
-            </span>
-        </p>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="text-center">
-                    <div class="blog-nav-item">
-                        <i class="fas fa-edit"></i>
-                        <a class="gray-link" href="{% url 'blog:blog-create' %}">
-                            Write a new Entry
-                        </a>
-                    </div>
-                    <div class="blog-nav-item">
-                        <i class="fas fa-th-large"></i> 
-                        <a class="gray-link" href="#">
-                            My Posts
-                        </a>
-                    </div>
-                    <div class="blog-nav-item">
-                        <i class="fas fa-id-card"></i>
-                        <a class="gray-link" href="#">
-                            My Profile
-                        </a>
-                    </div>
-                    <div class="blog-nav-item">
-                        <i class="fas fa-users"></i> 
-                        <a class="gray-link" href="#">
-                            Users
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <p class="heading-text text-center padding-top padding-bottom">
-            Current Topics
-            <span class="blog-heading-icon">
-                <i class="fas fa-glass-cheers"></i>
-            </span>
-        </p>
-        {% for blog in blog_entries %}
-        <div class="row">
-            <div class="col-lg-6">
-                <p class="reading-font">
-                    <a class="gray-link" href="{% url 'blog:blog-detail' blog.id %}">{{ blog.title }}</a>
-                    {% if user.is_authenticated %}
-                    <a class="gray-link blog-heading-icon" href="{% url 'blog:blog-update' blog.id %}">
-                        <i class="fas fa-edit"></i>
-                    </a>
-                    <a href="{% url 'blog:blog-delete' blog.id %}" class="gray-link blog-heading-icon">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                    {% endif %}
-                </p>
-            </div>
-        </div>
-        {% endfor %}
+{% block blog_navbar %}
+    {% block navbar_item_1 %}
+    <div class="blog-nav-item">
+        <i class="fas fa-edit"></i>
+        <a class="gray-link" href="{% url 'blog:blog-create' %}">
+            Write a new Entry
+        </a>
     </div>
     {% endblock %}
+{% endblock %}
+
+{% block blog_body %}
+<div class="container">
+    <p class="heading-text text-center padding-top padding-bottom">
+        Current Topics
+        <span class="blog-heading-icon">
+            <i class="fas fa-glass-cheers"></i>
+        </span>
+    </p>
+    {% for blog in blog_entries %}
+    <div class="row">
+        <div class="col-lg-6">
+            <p class="reading-font">
+                <a class="gray-link" href="{% url 'blog:blog-detail' blog.id %}">{{ blog.title }}</a>
+                {% if user.is_authenticated %}
+                <a class="gray-link blog-heading-icon" href="{% url 'blog:blog-update' blog.id %}">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'blog:blog-delete' blog.id %}" class="gray-link blog-heading-icon">
+                    <i class="far fa-trash-alt"></i>
+                </a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
 
 {% block custom_footer_elements %}
 {% endblock %}
