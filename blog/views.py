@@ -8,11 +8,12 @@ from django.http import HttpResponseRedirect
 from blog.forms import BlogEntryForm
 from blog.models import BlogEntry
 from django.urls import reverse, reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class BlogEntryList(ListView):
     model = BlogEntry
     context_object_name = 'blog_entries'
-    paginate_by = 100
+    paginate_by = 7
     
     # In case we need to define new dictionary elements
     # in the context
@@ -24,16 +25,21 @@ class BlogEntryDetailView(DetailView):
     model = BlogEntry
     context_object_name = 'blog_entry'
 
-class BlogEntryCreate(CreateView):
+class BlogEntryCreate(LoginRequiredMixin, CreateView):
     model = BlogEntry
     form_class = BlogEntryForm
 
-class BlogEntryUpdate(UpdateView):
+    def get_login_url(self):
+        login_url = reverse_lazy('user:login')
+
+        return login_url
+
+class BlogEntryUpdate(LoginRequiredMixin, UpdateView):
     model = BlogEntry
     form_class = BlogEntryForm
 
-class BlogEntryDelete(DeleteView):
+class BlogEntryDelete(LoginRequiredMixin, DeleteView):
     model = BlogEntry
-    success_url = reverse_lazy('blog:blog_list')
+    success_url = reverse_lazy('blog:blog-list')
 
 

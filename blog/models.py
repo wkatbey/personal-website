@@ -1,6 +1,7 @@
 from django.db import models
 from tinymce.models import HTMLField
 from django.urls import reverse, reverse_lazy
+from django.conf import settings
 
 
 class BlogEntry(models.Model):

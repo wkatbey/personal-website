@@ -71,34 +71,20 @@
             <div class="col-lg-6">
                 <p class="reading-font">
                     <a class="gray-link" href="{% url 'blog:blog-detail' blog.id %}">{{ blog.title }}</a>
+                    {% if user.is_authenticated %}
                     <a class="gray-link blog-heading-icon" href="{% url 'blog:blog-update' blog.id %}">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a href="#" class="gray-link blog-heading-icon" data-toggle="modal" data-target="#exampleModal">
+                    <a href="{% url 'blog:blog-delete' blog.id %}" class="gray-link blog-heading-icon">
                         <i class="far fa-trash-alt"></i>
                     </a>
+                    {% endif %}
                 </p>
-            </div>
-        </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                        <a type="button" href="{% url 'blog:blog-delete' blog.id %}" class="btn btn-outline-danger">Delete</a>
-                    </div>
-                </div>
             </div>
         </div>
         {% endfor %}
     </div>
     {% endblock %}
+
+{% block custom_footer_elements %}
+{% endblock %}
