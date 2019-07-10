@@ -14,19 +14,27 @@
     </div>
 {% endblock %} 
 
-{% block blog_navbar %}
-    {% block navbar_item_1 %}
+{% block navbar_item_1 %}
+    {% if user.is_authenticated %}
     <div class="blog-nav-item">
         <i class="fas fa-edit"></i>
         <a class="gray-link" href="{% url 'blog:blog-create' %}">
             Write a new Entry
         </a>
     </div>
-    {% endblock %}
+    {% endif %}
 {% endblock %}
 
 {% block blog_body %}
 <div class="container">
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    {% endfor %}
     <p class="heading-text text-center padding-top padding-bottom">
         Current Topics
         <span class="blog-heading-icon">

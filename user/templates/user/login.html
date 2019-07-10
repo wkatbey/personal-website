@@ -1,13 +1,7 @@
-{% extends 'static_website/base.html' %}
-{% load static %}
+{% extends 'blog/blog_base.html' %} 
+{% load static %} 
 {% load crispy_forms_tags %}
 
-{% block head_elements %}
-<link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'blog/spacing.css' %}"> 
-<link rel="stylesheet" href="{% static 'blog/hero-image.css' %}"> 
-<link rel="stylesheet" href="{% static 'blog/fonts.css' %}"> 
-{% endblock %}
 
 {% block hero-image-type %}
 <div class = "">
@@ -16,45 +10,27 @@
 {% block hero-image-text %}
 {% endblock %}
 
-{% block body %}
+{% block blog_heading %}
+    <p class="heading-text padding-top padding-bottom text-center">
+        Sign into Your Account
+    </p>
+{% endblock %}
+
+{% block blog_body %}
 <div class="container content-top">
-    <p class="heading-text text-center">Sign into Your Account</p>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="text-center">
-                <div class="blog-nav-item">
-                    <i class="fas fa-bars"></i>
-                    <a class="gray-link" href="{% url 'blog:blog-list' %}">
-                        Portal
-                    </a>
-                </div>
-                <div class="blog-nav-item">
-                    <i class="fas fa-th-large"></i> 
-                    <a class="gray-link" href="#">
-                        My Posts
-                    </a>
-                </div>
-                <div class="blog-nav-item">
-                    <i class="fas fa-id-card"></i>
-                    <a class="gray-link" href="#">
-                        My Profile
-                    </a>
-                </div>
-                <div class="blog-nav-item">
-                    <i class="fas fa-users"></i> 
-                    <a class="gray-link" href="#">
-                        Users
-                    </a>
-                </div>
-            </div>
+    {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
         </div>
-    </div>
-    <hr>
+    {% endfor %}
     <form method="POST">
         {% csrf_token %}
         <div class="form-group">
             <div class="col-lg-6">
-                {{ authentication_form | crispy }}
+                {{ form | crispy }}
             </div>
         </div>
         <div class="form-group">

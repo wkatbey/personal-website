@@ -8,8 +8,9 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
+from django.contrib.auth.views import LoginView
 
 class UserRegistrationView(View):
     def post(self, request):
@@ -20,12 +21,17 @@ class UserRegistrationView(View):
             username = user_registration_form.cleaned_data.get('username')
             raw_password = user_registration_form.cleaned_data.get('password1')
             
+            messages.success(request, f"Congrats, { username }, you've made an account!")
             user = authenticate(username=username, password=raw_password)
             login(request, user)
 
             return HttpResponseRedirect(reverse_lazy('blog:blog-list'))
 
-        return HttpResponseRedirect(reverse_lazy('user:register'))
+        context = {
+            'user_registration_form': user_registration_form
+        }
+        
+        return render(request, 'user/register.html', context)
 
     def get(self, request):
         user_registration_form = UserCreationForm()
@@ -36,23 +42,16 @@ class UserRegistrationView(View):
 
         return render(request, 'user/register.html', context)
 
-class UserLoginView(View):
+class UserLoginView(LoginView):
+    template_name = 'user/login.html'
+    success_url = reverse_lazy('blog:blog-list')
+
+    def get_success_url(self):
+        return success_url
+
+class UserLogoutView(View):
     def get(self, request):
-        authentication_form = AuthenticationForm()
-
-        context = {
-            'authentication_form': authentication_form
-        }
-
-        return render(request, 'user/login.html', context)
-
-    def post(self, request):
-        authentication_form = AuthenticationForm(request.POST)
-
-        if authentication_form.is_valid():
-            user = authentication_form.get_user
-            login(request, user)
-            
-            return HttpResponseRedirect(reverse_lazy('blog:blog_list'))
+        logout(request)
         
-        return HttpResponseRedirect(reverse_lazy('user:login'))
+        messages.info(request, 'You are now logged out')
+        return HttpResponseRedirect(reverse_lazy('blog:blog-list'))

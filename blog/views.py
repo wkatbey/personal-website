@@ -17,6 +17,7 @@ class BlogEntryList(ListView):
     
     # In case we need to define new dictionary elements
     # in the context
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
