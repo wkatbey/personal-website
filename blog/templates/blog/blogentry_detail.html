@@ -26,6 +26,21 @@
 <div class="container">
     <div class="row">
       <div class="col-lg-6">
+        {{ blog_entry.author.first_name }} {{ blog_entry.author.last_name }},
+        {{ blog_entry.date_of_submission }}
+        {% if user.is_authenticated and blog_entry.author.id == user.id %}
+        <a class="gray-link blog-heading-icon" href="{% url 'blog:blog-update' blog_entry.id %}">
+            <i class="fas fa-edit"></i>
+        </a>
+        <a href="{% url 'blog:blog-delete' blog_entry.id %}" class="gray-link blog-heading-icon">
+            <i class="far fa-trash-alt"></i>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-6">
         {{ blog_entry.text_entry | safe }}
       </div>
     </div>

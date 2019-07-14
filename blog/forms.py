@@ -32,7 +32,4 @@ class BlogEntryForm(ModelForm):
         blog_instance.date_of_submission = datetime.now()
         blog_instance.date_updated = datetime.now()
 
-        if commit:
-            blog_instance.save()
-        
         return blog_instance

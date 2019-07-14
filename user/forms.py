@@ -1,8 +1,8 @@
-from django.contrib.auth import UserCreationForm
-from django.contrib.auth import User
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
 
 class UserRegistrationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = UserCreationForm.Meta.fields
+        fields = ("username", "first_name", "last_name", "email", )

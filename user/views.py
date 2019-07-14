@@ -11,17 +11,21 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.views import LoginView
+from user.forms import UserRegistrationForm
 
 class UserRegistrationView(View):
     def post(self, request):
-        user_registration_form = UserCreationForm(request.POST)
+        user_registration_form = UserRegistrationForm(request.POST)
 
         if user_registration_form.is_valid():
             user_registration_form.save()
             username = user_registration_form.cleaned_data.get('username')
             raw_password = user_registration_form.cleaned_data.get('password1')
             
-            messages.success(request, f"Congrats, { username }, you've made an account!")
+            first_name = user_registration_form.cleaned_data["first_name"]
+            last_name = user_registration_form.cleaned_data["last_name"]
+
+            messages.success(request, f"Congrats, { firstname }, { lastname }, you've made an account!")
             user = authenticate(username=username, password=raw_password)
             login(request, user)
 
@@ -34,7 +38,7 @@ class UserRegistrationView(View):
         return render(request, 'user/register.html', context)
 
     def get(self, request):
-        user_registration_form = UserCreationForm()
+        user_registration_form = UserRegistrationForm()
         
         context = {
             'user_registration_form': user_registration_form
@@ -55,3 +59,16 @@ class UserLogoutView(View):
         
         messages.info(request, 'You are now logged out')
         return HttpResponseRedirect(reverse_lazy('blog:blog-list'))
+
+class UserList(ListView):
+    model = User
+    context_object_name = 'users'
+    template_name='user/user_list.html'
+    paginate_by = 7
+    
+    # In case we need to define new dictionary elements
+    # in the context
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context

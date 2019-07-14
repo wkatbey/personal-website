@@ -9,6 +9,7 @@ from blog.forms import BlogEntryForm
 from blog.models import BlogEntry
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 
 class BlogEntryList(ListView):
     model = BlogEntry
@@ -22,7 +23,7 @@ class BlogEntryList(ListView):
         context = super().get_context_data(**kwargs)
         return context
 
-class BlogEntryDetailView(DetailView):
+class BlogEntryDetail(DetailView):
     model = BlogEntry
     context_object_name = 'blog_entry'
 
@@ -35,12 +36,39 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
 
         return login_url
 
+    def form_valid(self, form):
+        blog = form.save()
+        blog.author = self.request.user
+        blog.save()
+        return HttpResponseRedirect(reverse_lazy('blog:blog-detail', kwargs = {
+            'pk': blog.id
+        }))
+
 class BlogEntryUpdate(LoginRequiredMixin, UpdateView):
     model = BlogEntry
     form_class = BlogEntryForm
+
+    def form_valid(self, form):
+        blog = form.save()
+        blog.save()
+        return HttpResponseRedirect(reverse_lazy('blog:blog-detail', kwargs = {
+            'pk': blog.id
+        }))
 
 class BlogEntryDelete(LoginRequiredMixin, DeleteView):
     model = BlogEntry
     success_url = reverse_lazy('blog:blog-list')
 
+class MyPosts(View):
+    template_name='blog/user_posts.html'
 
+    def get(self, request, pk):
+        user = User.objects.get(pk=pk)
+        blogs = BlogEntry.objects.all().filter(author=user)
+
+        context = {
+            'blogs': blogs,
+            'user_viewed': user
+        }
+
+        return render(request, self.template_name, context)
