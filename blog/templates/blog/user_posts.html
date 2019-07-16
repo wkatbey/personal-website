@@ -1,0 +1,48 @@
+{% extends 'blog/blog_base.html' %} 
+{% load static %} 
+
+{% block custom_head_elements %}
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+<script src='https://cdn.tiny.cloud/1/9lidlfl9gfd74zusr0iykq72dtxk48gnba2vupju5j0gdmfs/tinymce/5/tinymce.min.js'></script>
+<script>
+  tinymce.init({selector:'textarea'});
+</script>
+{% endblock %}
+
+{% block hero-image-type %}
+<div class="hero-blog-small-image">
+{% endblock %} 
+
+{% block hero-image-text %}
+{% endblock %} 
+
+{% block blog_heading %}
+<p class="heading-text padding-top padding-bottom text-center">
+    {{ user_viewed.first_name }} {{user_viewed.last_name}}'s Posts
+</p>
+{% endblock %}
+
+{% block blog_body %}
+<div class="container">
+    {% for blog in blogs %}
+    <div class="row">
+        <div class="col-lg-6">
+            <p class="reading-font">
+                <a class="gray-link" href="{% url 'blog:blog-detail' blog.id %}">{{ blog.title }}</a>
+                {% if user.is_authenticated and blog.author.id == user.id %}
+                <a class="gray-link blog-heading-icon" href="{% url 'blog:blog-update' blog.id %}">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'blog:blog-delete' blog.id %}" class="gray-link blog-heading-icon">
+                    <i class="far fa-trash-alt"></i>
+                </a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block custom_footer_elements %}
+{% endblock %}

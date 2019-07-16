@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import django_heroku
+from django.contrib.messages import constants as messages
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '96p@!zf_lb47kmgvpn98b0%7*zdt8ngi)pfu!#z_y+4(!v#6qg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -33,12 +35,17 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'static_website.apps.StaticWebsiteConfig',
+    'blog.apps.BlogConfig',
+    'user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
+    'crispy_forms',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -122,7 +129,24 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static_website/static/'),
+    os.path.join(BASE_DIR, 'blog/static/'),
+]
 
 django_heroku.settings(locals())
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+MESSAGE_LEVEL = messages.DEBUG
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+
+LOGIN_REDIRECT_URL = reverse_lazy('blog:blog-list')

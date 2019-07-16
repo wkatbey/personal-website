@@ -1,5 +1,19 @@
 {% extends './base.html' %}
 
+{% block hero-image-text %}
+<div class="container-fluid hero-text">
+  <p class="hero-home-heading text-center">Wassim Katbey</p>  
+  <p class = "hero-home-subheading text-center">
+    Full-Stack Web Developer, and Hobbyist
+  </p>
+  <div class="text-center">
+    <form action="#intro">
+      <button type="submit" id = "introButton" class="btn-hover color-9 text-center">Meet Me</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
 {% block mobile-home-nav %}
 <li class="nav-item active">
     <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
@@ -12,42 +26,43 @@
 
 {% block desktop-home-nav %}
 <li class="nav-item active">
-    <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
+    <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
 </li>
 {% endblock %}
 
-
 {% block body %}
 <main>
-  <div class = "container">
-    <div class = "heading-text" style="padding-bottom: 0px; padding-top: 50px" id="intro">
+  <div class = "container content-top">
+    <p class = "heading-text text-center" id="intro">
       Allow me to introduce myself <img src="https://img.icons8.com/nolan/64/000000/identity-theft.png">
-    </div><hr><br>
-  	<div class="row">
-      <div class="col-lg-6 text-center">
-        <div class= "self-portrait"></div>
-      </div>
-     	<div class="col-lg-5">
-        <div class = "image-side-text">
+    </p>
+    <hr class="padding-bottom">
+  	<div class="row padding-bottom">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8 align-self-center">
+        <p class = "reading-font">
           My name is Wassim, and I study Computer Science at Wayne State University. <br><br>I write web applications using a variety of frameworks. 
           I've used several frameworks for both academic, side, and professional work. I like learning about, and experimenting with new web technologies, 
-          like Angular and Vue. However, my qualities go beyond technical skillset.<br><br>
+          like Angular and Vue. However, my qualities go beyond technical skillset.
+        </p>
+        <br>
+        <p class = "reading-font">
           Besides work, I have lots of hobbies and interests. I love Aviation, catch up on the latest in the industry, and use a flight simulator.
-          <br><br>I love Architecture and Civil Engineering, and watch many documentaries depicting the construction of symbolic skyscrapers.
+        
+          I love Architecture and Civil Engineering, and watch many documentaries depicting the construction of symbolic skyscrapers.
           Additionally, I like photography (I took every photo on this website!).
-        </div>
+        </p>
       </div>
     </div>
-    <br>
   </div>
   <div class="black-background">
   	<div class="container-fluid">
-  		<div class = "heading-text">What am I like? </div>
+  		<p class = "heading-text text-center padding-bottom padding-top">What am I like? </p>
 	    <div class="row">
 	      <div class="col-lg-2"></div>
 	      <div class="col-lg-7">
-	        <div class="card-heading-text first-card-heading">>>> Problem Oriented</div>
-	        <div class = "card-body-text text-left">
+	        <div class="attribute-heading-text padding-bottom">>>> Problem Oriented</div>
+	        <div class = "attribute-body-text text-left">
 	          As a junior developer, I encounter many problems while programming. My first solution is to reference
             official documentation wherever I can, so long as it's relevant. From there I look for other sources to 
             see if anybody else has encountered the same problem. Knowing how to search for what I'm looking for is a 
@@ -59,8 +74,8 @@
 	    <div class="row">
 	      <div class="col-lg-3"></div>
 	      <div class="col-lg-7">
-	        <div class="card-heading-text">>>> Self Motivated </div>
-	        <div class = "card-body-text text-left">
+	        <div class="attribute-heading-text padding-bottom">>>> Self Motivated </div>
+	        <div class = "attribute-body-text text-left">
             I love programming and have the drive to work on many different projects. I love learning frameworks and using API's
             I've never used before. Additionally, I like having a small project I can work on whenever I have the time.
 	        </div>
@@ -70,8 +85,8 @@
 	    <div class="row">
 	      <div class="col-lg-4"></div>
 	      <div class="col-lg-7">
-	        <div class="card-heading-text">>>> Ambitious</div>
-	        <div class = "card-body-text text-left">
+	        <div class="attribute-heading-text padding-bottom">>>> Ambitious</div>
+	        <div class = "attribute-body-text text-left">
             Programming is a very serious tool and can be used to create a very large (and useful) project. I'd like to play
             a part in the development of a great product.
 	        </div>
@@ -81,10 +96,12 @@
   	</div>  
   </div>
   <div class="container">
-    <div class = "heading-text">Discover my work <img src="https://img.icons8.com/nolan/64/000000/cafe.png"></div>
+    <p class = "heading-text padding-top padding-bottom text-center">
+      Discover my work <img src="https://img.icons8.com/nolan/64/000000/cafe.png">
+    </p>
     <div class="row">
       <div class="col-lg-12">
-        <div class="body-text">
+        <div class="reading-font">
         Now that we're well acquainted, take some time to look through my work. If you're looking to see projects I'm currently working on, check out my
         <a style = "color: #696969" href = "http://github.com/wkatbey">Github</a>. If you're an employer, looking for a detailed, technical skillset, you'll find all that and more in
         <a style = "color: #696969" href = "{% url 'static_website:resume' %}">Resume</a>
@@ -93,36 +110,22 @@
     </div>
   </div>
   <br>
-<!--   <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-           <p class="body-text">
-                  Additionally, I'm an amateur photographer. I don't know much about photography. I only really use my iPhone to take photos. If I find I'm not satisfied with the quality of image I'm getting from my current collection, I will learn more photography. However, for the time being, this is outside my scope, as I'm currently devoted to software engineering.
-              </p>
-              <p class="body-text">
-                  As a software engineer in practice, I'm resposible for writing a script that is elegant, not just functional. A script that is structured, that can be understood through class dependency, self-documenting code, and so on. I like to make things I like look appealing. 
-              </p>
-              <p class="body-text">
-                  There are several midtown/downtown areas within my backyard. In early May, 2018, I traveled outside my scope to New York City. I'm going to create an album of photos taken on that trip, 
-                  and display them here.
-              </p>
-        </div>
-    </div>
-  </div> -->
   <div class="container">
-    <div class = "heading-text">Let's get in contact <img src="https://img.icons8.com/nolan/64/000000/contacts.png"></div>
+    <p class = "heading-text padding-top padding-bottom text-center">
+      Let's get in contact <img src="https://img.icons8.com/nolan/64/000000/contacts.png">
+    </p>
     <div class="row">
       <div class = "col-lg-4">
         <div class="card border-secondary mb-3" style="max-width: 25rem;">
           <div class="card-header">Wassim Katbey</div>
           <div class="card-body text-secondary">
             <p class="card-text">Phone Number: (313)-421-0627</p>
-            <p class="card-text">Email: fv6124@wayne.edu</p>
+            <p class="card-text">Email: katbeywassim@gmail.com</p>
           </div>
         </div>
       </div>
       <div class = "col-lg-7">
-        <div class = "body-text">
+        <div class = "reading-font">
           You can call me from Monday-Friday, 10AM-6PM. Additionally, you can send me an email any day of the week, I check my email often
         </div>
       </div>

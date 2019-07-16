@@ -1,12 +1,35 @@
 from django import forms
 from django.forms import ModelForm
-from models import BlogEntry
+from blog.models import BlogEntry
+from datetime import datetime
 
-class BlogForm(ModelForm):
+class BlogEntryForm(ModelForm):
     class Meta:
         model = BlogEntry
-        fields = [
+        fields = (
             'title',
-            'primary_image',
+            #'primary_image',
             'text_entry'
-        ]
+        )
+
+        widgets = {
+            'text_entry': forms.Textarea(
+                attrs = {
+                    'cols': 80, 
+                    'rows': 20,
+                    'class': 'form-control'
+                }
+            ),
+            'title': forms.TextInput(
+                attrs = {
+                    'class': 'form-control'
+                }
+            )
+        }
+
+    def save(self, commit=True):
+        blog_instance = super(BlogEntryForm, self).save(commit=False)
+        blog_instance.date_of_submission = datetime.now()
+        blog_instance.date_updated = datetime.now()
+
+        return blog_instance

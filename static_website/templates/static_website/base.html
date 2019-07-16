@@ -1,4 +1,7 @@
 {% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 
 <!doctype html>
 <html lang="en">
@@ -11,16 +14,20 @@
   <title>Wassim Katbey</title>
   <link rel="stylesheet" href="{% static 'static_website/buttons.css' %}">
   <link rel="stylesheet" href="{% static 'static_website/navbar_style.css' %}">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'static_website/custom_stylesheet.css' %}">
+  <link rel="stylesheet" href="{% static 'static_website/fonts.css' %}">
+  <link rel="stylesheet" href="{% static 'static_website/spacing.css' %}">
+  <link rel="stylesheet" href="{% static 'static_website/hero_properties.css' %}">
+  <link rel="stylesheet" href="{% static 'static_website/icons.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  {% block head_elements %}
+  {% endblock %}
 </head>
 <body class="bg-light">
-
-
 <nav class="navbar navbar-expand-lg navbar-dark navbar-blue navbar-mobile">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobileContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -47,7 +54,7 @@
 {% block hero-image-type %}
 <div class = "hero-image">
 {% endblock %}
-  <nav class="navbar navbar-expand-lg navbar-light navbar-transparent navbar-desktop">
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-desktop">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,31 +62,35 @@
         <ul class="navbar-nav ml-auto navbar-right">
         {% block desktop-home-nav %}
           <li class="nav-item">
-            <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
+            <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
+              <i class="fas fa-home"></i> Home
+            </a>
           </li>
         {% endblock %}
         {% block desktop-resume-nav %}
           <li class="nav-item">
-            <a class="nav-link nav-text" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
+            <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
           </li>
         {% endblock %}
+        {% block blog-list-link %}
+          <li class="nav-item">
+            <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
+              <i class="fas fa-blog"></i> SkyBlue Blogging
+            </a>
+          </li>
+        {% endblock %}
+        {% block blog-profile-link %}
+        {% endblock %}
+        {% block blog-create-link %}
+        {% endblock %}
           <li class = "nav-item">
-            <a class="nav-link nav-text" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
+            <a class="nav-link nav-text nav-text--light" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
           </li>
         </ul>
       </div>
   </nav>
   {% block hero-image-text %}
   <div class = "hero-text text-center">
-    <div class="hero-large-font">Wassim Katbey</div>
-    <div class = "hero-large-sub-font">
-      Software Developer, with a large knowledgebase
-    </div>
-    <div class="button-cover">
-      <form action="#intro">
-       <br><button type="submit" id = "introButton" class="btn-hover color-9">Meet Me</button>
-      </form>
-    </div>
   </div>
   {% endblock %}
 </div>
@@ -91,27 +102,28 @@
 
 
 <footer class="footer" style = "margin-top: 5%">
-    <div class="container">
+{% block custom_footer_elements %}
+  <div class="container">
     <div class="row">
       <div class="col-lg-6">
         <a class="text-muted" href="https://icons8.com/icon/77154/identity-theft">
           Check out Icons8! I used their icons
         </a>
       </div>
-     </div>
-     <div class="row">
+    </div>
+  
+    <div class="row">
       <div class="col-lg-6">
         <span class="text-muted">Copyright &copy Wassim Katbey 2018</span>
       </div>
-     </div>
-     <br>
-   </div>
- </footer>
+    </div>
+    <br>
+  </div>
+{% endblock %}   
+</footer>
 
 
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
 </body>
 </html>
