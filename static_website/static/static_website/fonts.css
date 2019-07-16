@@ -2,30 +2,6 @@
     --gray-link: #696969;
 }
 
-.hero-home-heading {
-    font-weight: 300;
-    font-size: 4rem;
-}
-
-.hero-home-subheading {
-    font-weight: 300;
-    font-size: 2rem;
-}
-
-.hero-large-heading {
-    font-size: 4.375rem;
-    font-weight: 300;
-    color: #000000;
-    text-align: center;
-}
-
-.hero-large-sub-heading {
-    font-size: 2.1875rem;
-    font-weight: 300;
-    color: #000000;
-    text-align: center;
-}
-
 .heading-text {
     font-size: 2rem;
     font-weight: 300;
@@ -37,12 +13,12 @@
 }
 
 .reading-font {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.18rem;
 }
 
 .reading-font-lg {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.5rem;
 }
 

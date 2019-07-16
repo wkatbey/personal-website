@@ -25,7 +25,7 @@ class UserRegistrationView(View):
             first_name = user_registration_form.cleaned_data["first_name"]
             last_name = user_registration_form.cleaned_data["last_name"]
 
-            messages.success(request, f"Congrats, { firstname }, { lastname }, you've made an account!")
+            messages.success(request, f"Congrats, { first_name }, { last_name }, you've made an account!")
             user = authenticate(username=username, password=raw_password)
             login(request, user)
 

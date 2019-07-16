@@ -20,6 +20,9 @@
   <link rel="stylesheet" href="{% static 'static_website/custom_stylesheet.css' %}">
   <link rel="stylesheet" href="{% static 'static_website/fonts.css' %}">
   <link rel="stylesheet" href="{% static 'static_website/spacing.css' %}">
+  <link rel="stylesheet" href="{% static 'static_website/hero_properties.css' %}">
+  <link rel="stylesheet" href="{% static 'static_website/icons.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   {% block head_elements %}
   {% endblock %}
@@ -51,7 +54,7 @@
 {% block hero-image-type %}
 <div class = "hero-image">
 {% endblock %}
-  <nav class="navbar navbar-expand-lg navbar-light navbar-transparent navbar-desktop">
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-desktop">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -59,19 +62,19 @@
         <ul class="navbar-nav ml-auto navbar-right">
         {% block desktop-home-nav %}
           <li class="nav-item">
-            <a class="nav-link nav-text" href="{% url 'static_website:index' %}">
+            <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
               <i class="fas fa-home"></i> Home
             </a>
           </li>
         {% endblock %}
         {% block desktop-resume-nav %}
           <li class="nav-item">
-            <a class="nav-link nav-text" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
+            <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
           </li>
         {% endblock %}
         {% block blog-list-link %}
           <li class="nav-item">
-            <a class="nav-link nav-text" href="{% url 'blog:blog-list' %}">
+            <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
               <i class="fas fa-blog"></i> SkyBlue Blogging
             </a>
           </li>
@@ -81,7 +84,7 @@
         {% block blog-create-link %}
         {% endblock %}
           <li class = "nav-item">
-            <a class="nav-link nav-text" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
+            <a class="nav-link nav-text nav-text--light" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
           </li>
         </ul>
       </div>

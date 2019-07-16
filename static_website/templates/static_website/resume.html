@@ -12,18 +12,18 @@
 
 {% block desktop-resume-nav %}
 <li class="nav-item active">
-    <a class="nav-link nav-text" href=""><i class="fas fa-file-signature"></i> Resume</a>
+    <a class="nav-link nav-text nav-text--light" href=""><i class="fas fa-file-signature"></i> Resume</a>
 </li>
 {% endblock %}
 
 {% block hero-image-text %}
-<div class = "hero-text text-center">
-  <div class = "hero-small-font">
+<div class = "hero-resume-text text-center">
+  <p class = "hero-small-font">
     Resume & References
-  </div>
-  <div class="hero-small-sub-font">
+  </p>
+  <p class="hero-small-sub-font">
     Browse through my skills, education, and experience
-  </div>
+  </p>
 </div>
 {% endblock %}
 
@@ -31,11 +31,22 @@
   <main>
     <div class="container">
       
-      <p class="heading-text text-center padding-top padding-bottom">Objective</p>
-     
+      <div class="icon-heading-container padding-top--2 padding-bottom--2">
+          <p class="heading-text">Objective</p>
+          <i class="material-icons heading-icon">
+            local_cafe
+          </i>
+      </div>
+      
       <p class="reading-font-lg text-center">Front-End, Back-End, or Full-Stack Development of Web Apps</p>
-   
-      <p class="heading-text text-center padding-top">Education</p>
+      
+      <div class="icon-heading-container padding-top--2 padding-bottom--2">
+          <p class="heading-text">Education</p>
+          <i class="material-icons heading-icon">
+              library_books
+          </i>
+      </div>
+      
       <div class="row">
         <div class = "col-lg-6">
           <div class="text-center resume-heading">Wayne State University</div>
@@ -46,7 +57,14 @@
           <div class="text-center resume-heading">Major GPA: 4.0</div>
         </div>
       </div>
-      <p class="heading-text text-center padding-top padding-bottom">Work-Related Projects</p>
+      <div class="icon-heading-container padding-top--2 padding-bottom--2">
+        <p class="heading-text">
+            Work-Related Projects  
+        </p>
+        <i class="material-icons heading-icon">
+            work
+        </i>
+      </div>
       <div class="row">
         <div class="col-lg-6">
           <p class="reading-font-lg text-center gray-link">Call Harbor: Project 'Betroit'</p>
@@ -73,7 +91,12 @@
         </div>
       </div>
       <hr>
-      <p class="heading-text text-center">Open-Source (Side) Projects</p>
+      <div class="icon-heading-container padding-top--2 padding-bottom--2">
+        <p class="heading-text">Open-Source (Side) Projects</p>
+        <i class="material-icons heading-icon">
+          code
+        </i>
+      </div>
       <p class="subheading-text text-center padding-bottom">Click on a project's name to view its Github</p>
       <div class="row">
         <div class="col-lg-2"></div>
@@ -85,7 +108,7 @@
             Working together with a team to develop a web application that allows users to compare prices and view food items 
             among restaurants on campus.
           </p>
-          <p class="reading-font">Written in Django, Vue.js</p>
+          <p class="reading-font">Written in Django</p>
         </div>
         <div class="col-lg-4 col-sm-12 pt-lg-0 pt-sm-3">
           <p class="resume-heading text-center ">
@@ -112,7 +135,7 @@
         </div>
         <div class="col-lg-4 col-sm-12 pt-lg-0 pt-sm-3">
           <p class="resume-heading text-center">
-            <a href="https://github.com/wkatbey/Student-Teacher-Database" style = "color: #696969">Student/Teacher App</a>
+            <a class="gray-link" href="https://github.com/wkatbey/Student-Teacher-Database">Student/Teacher App</a>
           </p>
           <p class="card-body-text">
             User can create, save, and load student and teacher database. Bank Account functionality
@@ -121,8 +144,13 @@
           <p class="reading-font">Written in C++, runs in the console</p>
         </div>
       </div>
-      <br>
-      <p class="heading-text text-center padding-top">My Skillset</p>
+      <hr>
+      <div class="icon-heading-container padding-top--2 padding-bottom--2">
+          <p class="heading-text">My Skillset</p>
+          <i class="material-icons heading-icon">
+            build
+          </i>
+      </div>
       <div class="text-center reading-font">
         <p>C++ & Object Oriented Programming</p>
         <p>HTML</p>
@@ -134,7 +162,12 @@
         <p>Algorithm Analysis</p>
         <p>Data Structures</p>
       </div>
-      <p class="heading-text text-center padding-top">References</p>
+      <div class="icon-heading-container padding-top--2 padding-bottom--2">
+          <p class="heading-text">References</p>
+          <i class="material-icons heading-icon">
+              people
+          </i>
+      </div>
       <div class = "row text-center body-text">
         <div class="col-lg-4">
               <p>Daniel Ouellette</p>

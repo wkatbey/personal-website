@@ -7,10 +7,17 @@
 
 {% block hero-image-text %}
     <div class="container-fluid hero-blog-text">
+        {% if user.is_authenticated %}
+        <p class="hero-blog-heading text-center">Welcome, {{ user.first_name }}</p>
+        <p class="hero-blog-subheading text-center">
+            Read and Write Entries
+        </p>
+        {% else %}
         <p class="hero-blog-heading text-center">SkyBlue Blogging</p>
         <p class="hero-blog-subheading text-center">
             A Simple Journaling Platform
         </p>
+        {% endif %}
     </div>
 {% endblock %} 
 

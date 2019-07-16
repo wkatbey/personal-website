@@ -1,0 +1,33 @@
+.hero-blog-image {
+    background-image: url("./blue.jpg");
+    height: 30rem;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-blog-small-image {
+    background-image: url("./blue.jpg");
+    height: 10rem;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-blog-text {
+    transform: translateY(7rem);
+}
+
+.hero-blog-heading {
+    font-size: 2.9rem;
+    font-weight: 400;
+}
+
+.hero-blog-subheading {
+    font-size: 1.9rem;
+    font-weight: 400;
+}
+
+.hero-blog-small-text {
+    transform: translateY(3.6rem);
+}
