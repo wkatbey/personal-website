@@ -148,7 +148,8 @@ STATICFILES_DIRS = [
 
 django_heroku.settings(locals())
 
-#del DATABASES['default']['OPTIONS']['sslmode']
+if not DEBUG:
+    del DATABASES['default']['OPTIONS']['sslmode']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
