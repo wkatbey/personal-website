@@ -14,11 +14,8 @@ import os
 import django_heroku
 from django.contrib.messages import constants as messages
 from django.urls import reverse_lazy
-<<<<<<< HEAD
-=======
 import dj_database_url
 import dotenv
->>>>>>> master
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,7 +31,6 @@ SECRET_KEY = '96p@!zf_lb47kmgvpn98b0%7*zdt8ngi)pfu!#z_y+4(!v#6qg'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -141,11 +137,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
 
-<<<<<<< HEAD
-=======
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
->>>>>>> master
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_website/static/'),
     os.path.join(BASE_DIR, 'blog/static/'),
@@ -153,12 +146,9 @@ STATICFILES_DIRS = [
 
 django_heroku.settings(locals())
 
-<<<<<<< HEAD
-=======
 if not DEBUG:
     del DATABASES['default']['OPTIONS']['sslmode']
 
->>>>>>> master
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MESSAGE_LEVEL = messages.DEBUG
