@@ -2,7 +2,7 @@
 *.log
 *.pot
 *.pyc
-personal_website/__pycache__/
+**/__pycache__
 local_settings.py
 .env
 
