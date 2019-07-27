@@ -5,16 +5,35 @@ from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteVi
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
-from blog.forms import BlogEntryForm
-from blog.models import BlogEntry
+from blog.forms import BlogEntryForm, CategoryForm
+from blog.models import BlogEntry, Category
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 
+class CategoryList(ListView):
+    model = Category
+    context_object_name = 'categories'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+class CategoryCreate(LoginRequiredMixin, CreateView):
+    model = Category
+    form_class = CategoryForm
+
+class CategoryUpdate(LoginRequiredMixin, UpdateView):
+    model = Category
+    form_class = CategoryForm
+
+class CategoryDelete(LoginRequiredMixin, DeleteView):
+    model = Category
+    success_url = ''
+
 class BlogEntryList(ListView):
     model = BlogEntry
     context_object_name = 'blog_entries'
-    paginate_by = 7
     
     # In case we need to define new dictionary elements
     # in the context
@@ -72,3 +91,4 @@ class MyPosts(View):
         }
 
         return render(request, self.template_name, context)
+
