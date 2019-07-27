@@ -44,6 +44,11 @@
         <a class="nav-link nav-text" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
       </li>
     {% endblock %}
+    {% block mobile-blog-nav %}
+      <li class="nav-item">
+        <a class="nav-link nav-text" href="{% url 'blog:blog-list' %}"><i class="fas fa-blog"></i> SkyBlue Blogging</a>
+      </li>
+    {% endblock %}
       <li class = "nav-item">
         <a class="nav-link nav-text" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
       </li>
@@ -72,7 +77,7 @@
             <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
           </li>
         {% endblock %}
-        {% block blog-list-link %}
+        {% block desktop-blog-nav %}
           <li class="nav-item">
             <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
               <i class="fas fa-blog"></i> SkyBlue Blogging
