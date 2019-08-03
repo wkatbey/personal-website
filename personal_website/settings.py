@@ -30,7 +30,9 @@ SECRET_KEY = '96p@!zf_lb47kmgvpn98b0%7*zdt8ngi)pfu!#z_y+4(!v#6qg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "wassimkatbey.com"
+]
 
 # Application definition
 
