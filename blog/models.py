@@ -4,6 +4,7 @@ from django.urls import reverse, reverse_lazy
 from django.conf import settings
 from django.contrib.auth.models import User
 
+'''
 class Category(models.Model):
     title = models.CharField(
         max_length=50,
@@ -14,6 +15,7 @@ class Category(models.Model):
         max_length=500,
         verbose_name="Description"
     )
+'''
 
 class BlogEntry(models.Model):
     title = models.CharField(
@@ -28,10 +30,7 @@ class BlogEntry(models.Model):
     date_updated = models.DateTimeField(default=None)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
-
-    def get_absolute_url(self):
-        return reverse('blog:blog-detail', args=[self.id])
+    #category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
 
     def get_absolute_url(self):
         return reverse('blog:blog-detail', args=[self.id])

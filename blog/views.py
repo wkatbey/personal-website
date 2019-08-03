@@ -5,12 +5,13 @@ from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteVi
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
-from blog.forms import BlogEntryForm, CategoryForm
-from blog.models import BlogEntry, Category
+from blog.forms import BlogEntryForm
+from blog.models import BlogEntry
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 
+'''
 class CategoryList(ListView):
     model = Category
     context_object_name = 'categories'
@@ -30,6 +31,7 @@ class CategoryUpdate(LoginRequiredMixin, UpdateView):
 class CategoryDelete(LoginRequiredMixin, DeleteView):
     model = Category
     success_url = ''
+'''
 
 class BlogEntryList(ListView):
     model = BlogEntry
