@@ -164,3 +164,5 @@ MESSAGE_TAGS = {
 }
 
 LOGIN_REDIRECT_URL = reverse_lazy('blog:blog-list')
+
+SECURE_SSL_REDIRECT = True
