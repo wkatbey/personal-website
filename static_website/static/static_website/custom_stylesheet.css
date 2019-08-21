@@ -42,7 +42,7 @@ html {
 }
 
 .black-background {
-    background: linear-gradient(to right, #000046, #1CB5E0);
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
     color: white;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,14 +62,6 @@ html {
     text-align: center;
 }
 
-.navbar-desktop {
-    display: block;
-}
-
-.navbar-mobile {
-    display: none;
-}
-
 .padding-on-mobile {
     padding-top: 0px;
 }
@@ -77,11 +69,6 @@ html {
 .hide-on-mobile {
     display: block;
 }
-
-
-
-
-
 
 
 /* ----------- Retina Screens ----------- */
@@ -161,12 +148,6 @@ html {
         padding-left: 10px;
         padding-right: 10px;
     }
-    nav.navbar-desktop {
-        display: none;
-    }
-    nav.navbar-mobile {
-        display: block;
-    }
     div.resume-heading {
         font-size: 20px;
         text-align: left;
@@ -219,12 +200,6 @@ html {
         font-size: 15px;
         padding-left: 10px;
         padding-right: 10px;
-    }
-    nav.navbar-desktop {
-        display: none;
-    }
-    nav.navbar-mobile {
-        display: block;
     }
     div.resume-heading {
         font-size: 20px;
@@ -297,12 +272,6 @@ html {
         font-size: 15px;
         padding-left: 10px;
         padding-right: 10px;
-    }
-    nav.navbar-desktop {
-        display: none;
-    }
-    nav.navbar-mobile {
-        display: block;
     }
     div.resume-heading {
         font-size: 20px;

@@ -1,24 +1,41 @@
-.nav-text  {
-	/*font-family: "Roboto";*/
-	font-size: 20px;
-	font-weight: 400;
-	border-bottom: 0.25rem solid transparent;
+.nav-text {
+    /*font-family: "Roboto";*/
+    font-size: 20px;
+    font-weight: 400;
+    border-bottom: 0.25rem solid transparent;
 }
 
 .nav-text--dark {
-	color: black;
+    color: black;
 }
 
 .nav-text--light {
-	color: white;
+    color: white;
 }
 
-
 .nav-text--dark:hover {
-	color: gray;
-	/*border-bottom-color: gray;*/
+    color: gray;
+    /*border-bottom-color: gray;*/
 }
 
 .nav-text--light:hover {
-	color: #cccecf;
+    color: #cccecf;
+}
+
+.navbar-mobile {
+    background-color: rgba(8, 20, 255, 0.9);
+    display: none;
+}
+
+.navbar-desktop {
+    display: block;
+}
+
+@media (min-device-width: 300px) and (max-device-width: 1000px) {
+    .navbar-mobile {
+        display: block;
+    }
+    .navbar-desktop {
+        display: none;
+    }
 }
