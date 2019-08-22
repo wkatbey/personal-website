@@ -6,7 +6,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
 from blog.forms import BlogEntryForm
-from blog.models import BlogEntry
+from blog.models import BlogEntry, Category
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
@@ -33,6 +33,29 @@ class CategoryDelete(LoginRequiredMixin, DeleteView):
     success_url = ''
 '''
 
+class BlogsByCategory(View):
+    template_name = 'blog/blogentry_list_category.html'
+
+    def get(self, request, pk):
+        category_id = pk
+        category = Category.objects.get(pk=category_id)
+
+        blogs = BlogEntry.objects.filter(category=category)
+        
+        breadcrumbs = category.get_category_list()
+        breadcrumbs_max = len(breadcrumbs)-1
+
+        breadcrumbs = enumerate(breadcrumbs)
+    
+        context = {
+            'blogs': blogs,
+            'breadcrumbs': breadcrumbs,
+            'breadcrumbs_max': breadcrumbs_max,
+            'category': category
+        }
+
+        return render(request, self.template_name, context)
+
 class BlogEntryList(ListView):
     model = BlogEntry
     context_object_name = 'blog_entries'
@@ -47,6 +70,13 @@ class BlogEntryList(ListView):
 class BlogEntryDetail(DetailView):
     model = BlogEntry
     context_object_name = 'blog_entry'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category_list = context['blog_entry'].get_category_list()
+        context['breadcrumbs'] = enumerate(category_list)
+        context['breadcrumbs_max'] = len(category_list)-1
+        return context
 
 class BlogEntryCreate(LoginRequiredMixin, CreateView):
     model = BlogEntry
@@ -93,4 +123,6 @@ class MyPosts(View):
         }
 
         return render(request, self.template_name, context)
+
+    
 

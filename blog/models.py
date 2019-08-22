@@ -33,14 +33,24 @@ class Category(models.Model):
 
     def __str__(self):
         full_path = [self.title]
-        k = self.parent
+        category = self.parent
         
-        while k is not None:
-            full_path.append(k.title)
-            k = k.parent
+        while category is not None:
+            full_path.append(category.title)
+            category = category.parent
 
-        return ' -> '.join(full_path[::-1])
+        # For reference, makes a copy of the list in reverse order
+        return ' -> '.join(full_path[::-1]) 
+    
+    def get_category_list(self):
+        category = self
+        breadcrumb = []
+        
+        while category is not None:
+            breadcrumb.append(category)
+            category = category.parent
 
+        return breadcrumb[::-1]
 
 class BlogEntry(models.Model):
     title = models.CharField(
@@ -67,13 +77,10 @@ class BlogEntry(models.Model):
 
     def get_category_list(self):
         category = self.category
-        breadcrumb = ['dummy']
+        breadcrumb = []
         
         while category is not None:
-            breadcrumb.append(category.slug)
+            breadcrumb.append(category)
             category = category.parent
-        
-        for i in range(len(breadcrumb)-1):
-            breadcrumb[i] = '/'.join(breadcrumb[-1:i-1:-1])
-        
-        return breadcrumb[-1:0:-1]
+
+        return breadcrumb[::-1]

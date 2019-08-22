@@ -10,4 +10,5 @@ urlpatterns = [
     path('delete/<int:pk>/', views.BlogEntryDelete.as_view(), name='blog-delete'),
     path('view/<int:pk>/', views.BlogEntryDetail.as_view(), name='blog-detail'),
     path('user_posts/<int:pk>/', views.MyPosts.as_view(), name='user-posts'),
+    path('category/<int:pk>/', views.BlogsByCategory.as_view(), name='blogs-by-category')
 ]
