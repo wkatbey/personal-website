@@ -4,18 +4,43 @@ from django.urls import reverse, reverse_lazy
 from django.conf import settings
 from django.contrib.auth.models import User
 
-'''
+
 class Category(models.Model):
     title = models.CharField(
         max_length=50,
-        verbose_name="Categories"
+        verbose_name="Category"
     )
 
     description = models.CharField(
         max_length=500,
         verbose_name="Description"
     )
-'''
+
+    slug = models.SlugField()
+
+    parent = models.ForeignKey(
+        'self',
+        blank=True,
+        null=True,
+        related_name='children',
+        on_delete=models.CASCADE
+    )
+
+    class Meta:
+        unique_together = ('slug', 'parent')
+        verbose_name_plural = 'categories'
+
+
+    def __str__(self):
+        full_path = [self.title]
+        k = self.parent
+        
+        while k is not None:
+            full_path.append(k.title)
+            k = k.parent
+
+        return ' -> '.join(full_path[::-1])
+
 
 class BlogEntry(models.Model):
     title = models.CharField(
@@ -30,7 +55,25 @@ class BlogEntry(models.Model):
     date_updated = models.DateTimeField(default=None)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
-    #category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
+    category = models.ForeignKey(
+        'Category', 
+        null=True, 
+        blank=True, 
+        on_delete=models.CASCADE
+    )
 
     def get_absolute_url(self):
         return reverse('blog:blog-detail', args=[self.id])
+
+    def get_category_list(self):
+        category = self.category
+        breadcrumb = ['dummy']
+        
+        while category is not None:
+            breadcrumb.append(category.slug)
+            category = category.parent
+        
+        for i in range(len(breadcrumb)-1):
+            breadcrumb[i] = '/'.join(breadcrumb[-1:i-1:-1])
+        
+        return breadcrumb[-1:0:-1]
