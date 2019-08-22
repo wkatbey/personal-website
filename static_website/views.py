@@ -4,7 +4,7 @@ from static_website.forms import ContactForm
 from django.core.mail import send_mail
 
 COMPANY_EMAIL = 'katbeywassim@gmail.com'
-DEFAULT_SUBJECT = 'Website Email: '
+DEFAULT_SUBJECT = 'Website Email'
 
 class Home(View):
     template_name = 'static_website/index.html'
