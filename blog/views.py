@@ -7,6 +7,7 @@ from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect
 from blog.forms import BlogEntryForm
 from blog.models import BlogEntry, Category
+from .category_traversal import get_blogs_by_category
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
@@ -38,9 +39,11 @@ class BlogsByCategory(View):
 
     def get(self, request, pk):
         category_id = pk
+
+        categories = Category.objects.all()
         category = Category.objects.get(pk=category_id)
 
-        blogs = BlogEntry.objects.filter(category=category)
+        blogs = get_blogs_by_category(category) 
         
         breadcrumbs = category.get_category_list()
         breadcrumbs_max = len(breadcrumbs)-1
@@ -123,6 +126,3 @@ class MyPosts(View):
         }
 
         return render(request, self.template_name, context)
-
-    
-
