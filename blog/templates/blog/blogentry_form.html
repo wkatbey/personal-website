@@ -2,11 +2,7 @@
 {% load static %} 
 
 {% block custom_head_elements %}
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-<script src='https://cdn.tiny.cloud/1/9lidlfl9gfd74zusr0iykq72dtxk48gnba2vupju5j0gdmfs/tinymce/5/tinymce.min.js'></script>
-<script>
-  tinymce.init({selector:'textarea'});
-</script>
+
 {% endblock %}
 
 {% block hero-image-type %}
@@ -34,20 +30,29 @@
           {{ form.title.label_tag }}
           {{ form.title }}
       </div>
-      <div class="form-group">
-        {{ form.text_entry }}
+      <div id="editor-container" class="form-group">
       </div>
-      <div class="row">
+      {{ form.text_entry }}
+      <div class="row pt-2">
         <div class="col-lg-12 text-right">
           {% if object %}
           <input type="submit" class="btn btn-outline-primary" value="Save Changes">
           {% else %}
-          <input type="submit" class="btn btn-outline-primary" value="Post">
+          <input type="submit" class="btn btn-outline-primary" onClick = "savePost()" value="Post">
           {% endif %}
         </div>
       </div>
     </form>
 </div>
+
+<script>
+  function savePost() {
+    let editorContent = quill.container.innerHTML;
+    let savedEditorContent = document.getElementsByName('text_entry')[0];
+    console.log("Am I even here");
+    savedEditorContent.value = editorContent;
+  }
+</script>
 {% endblock %}
 
 {% block custom_footer_elements %}
@@ -61,3 +66,5 @@
     </div>
 </div>
 {% endblock %}
+
+

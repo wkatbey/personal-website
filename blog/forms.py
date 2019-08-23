@@ -14,11 +14,9 @@ class BlogEntryForm(ModelForm):
         )
 
         widgets = {
-            'text_entry': forms.Textarea(
+            'text_entry': forms.TextInput(
                 attrs = {
-                    'cols': 80, 
-                    'rows': 20,
-                    'class': 'form-control'
+                    'type': 'hidden',
                 }
             ),
             'title': forms.TextInput(

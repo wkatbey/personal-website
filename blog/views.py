@@ -98,6 +98,10 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
             'pk': blog.id
         }))
 
+    def form_invalid(self, form):
+        print(form.cleaned_data['text_entry'])
+        return HttpResponseRedirect(reverse_lazy('blog:blog-list'))
+
 class BlogEntryUpdate(LoginRequiredMixin, UpdateView):
     model = BlogEntry
     form_class = BlogEntryForm

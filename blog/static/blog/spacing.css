@@ -1,3 +1,7 @@
 .blog-heading-icon {
     padding-left: 1rem;
 }
+
+#editor-container {
+    height: 28rem;
+}

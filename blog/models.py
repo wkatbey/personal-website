@@ -4,6 +4,20 @@ from django.urls import reverse, reverse_lazy
 from django.conf import settings
 from django.contrib.auth.models import User
 
+'''
+class Comment(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    text_entry = HTMLField()
+    date_of_submission = models.DateTimeField()
+    has_been_modified = models.BooleanField(default=False)
+    date_updated = models.DateTimeField(default=None)
+
+    blog = models.ForeignKey(
+        'Blog',
+        on_delete=models.CASCADE
+    )
+'''
+
 
 class Category(models.Model):
     title = models.CharField(
