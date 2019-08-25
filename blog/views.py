@@ -85,6 +85,12 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
     model = BlogEntry
     form_class = BlogEntryForm
 
+    def post(self, request, *args, **kwargs):
+        self.object = None
+
+        print(request.POST['text_entry'])
+        return super().post(request, *args, **kwargs)
+
     def get_login_url(self):
         login_url = reverse_lazy('user:login')
 

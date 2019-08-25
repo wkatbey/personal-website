@@ -9,27 +9,29 @@ class BlogEntryForm(ModelForm):
         fields = (
             'title',
             #'primary_image',
-            'text_entry',
-            'category'
+            'category',
+            'text_entry'
         )
 
         widgets = {
-            'text_entry': forms.TextInput(
+            'category': forms.Select(
                 attrs = {
-                    'type': 'hidden',
-                }
+                    'class': 'form-control'
+                },
+                choices = Category.objects.all()
             ),
             'title': forms.TextInput(
                 attrs = {
                     'class': 'form-control'
                 }
             ),
-            'category': forms.Select(
+            'text_entry': forms.Textarea(
                 attrs = {
+                    'id': 'text-editor',
                     'class': 'form-control'
-                },
-                choices = Category.objects.all()
+                }
             )
+         
         }
 
     def save(self, commit=True):
