@@ -65,19 +65,34 @@
     text-align: center;
 }
 
+/* Laptop L and Desktop Displays */
 @media (min-width: 1101px) {
     .hero-image {
         height: 100vh;
     }
+
+    @media (max-height: 600px ) {
+        .hero-image {
+            height: 40rem;
+        }
+    }
 }
 
+
+/* Large Tablet and Small Laptop Displays */
 @media (min-width: 769px) and (max-width: 1100px) {
     .hero-image {
         height: 100vh;
     }
     .hero-text {
-        transform: translate(0rem, 2.4rem);
+        transform: translate(0rem, 7rem);
         padding-top: 5rem;
+    }
+
+    @media (max-height: 700px) {
+        .hero-image {
+            height: 30rem;
+        }
     }
 }
 
@@ -85,8 +100,15 @@
     .hero-image {
         height: 100vh;
     }
-    .hero-text {
+    div.hero-text {
         padding-top: 5rem;
+        transform: translate(0rem, 7rem);
+    }
+
+    @media (max-height: 700px) {
+        .hero-image {
+            height: 40rem;
+        }
     }
 }
 
@@ -94,11 +116,14 @@
 /*Extra Small Devices*/
 
 @media (min-width: 300px) and (max-width: 575.98px) {
+    #introButton {
+        display: none;
+    }
     .hero-home-heading {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
     .hero-home-subheading {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
     }
     .hero-small-heading {
         font-size: 2.2rem;
@@ -108,12 +133,14 @@
     }
     div.hero-text {
         padding-top: 1rem;
-        transform: translate(0rem, 7rem);
+        transform: translate(0rem, 1rem);
     }
     .hero-image {
-        height: 100vh;
+        height: 35vh;
     }
     div.hero-sub-image {
         height: 14rem;
     }
 }
+
+
