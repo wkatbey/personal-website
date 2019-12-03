@@ -1,1 +1,14 @@
-/* Nothing here yet */
+.blog-category {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+}
+
+.blog-category-link {
+    color: #628C8C;
+}
+
+.blog-metadata {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}

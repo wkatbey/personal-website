@@ -2,11 +2,7 @@
 {% load static %} 
 
 {% block custom_head_elements %}
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-<script src='https://cdn.tiny.cloud/1/9lidlfl9gfd74zusr0iykq72dtxk48gnba2vupju5j0gdmfs/tinymce/5/tinymce.min.js'></script>
-<script>
-  tinymce.init({selector:'textarea'});
-</script>
+
 {% endblock %}
 
 {% block hero-image-type %}
@@ -37,7 +33,7 @@
       <div class="form-group">
         {{ form.text_entry }}
       </div>
-      <div class="row">
+      <div class="row pt-2">
         <div class="col-lg-12 text-right">
           {% if object %}
           <input type="submit" class="btn btn-outline-primary" value="Save Changes">
@@ -61,3 +57,5 @@
     </div>
 </div>
 {% endblock %}
+
+

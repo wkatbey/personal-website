@@ -1,20 +1,7 @@
 from django import forms
 from django.forms import ModelForm
-from blog.models import BlogEntry
+from blog.models import BlogEntry, Category
 from datetime import datetime
-
-'''
-class CategoryForm(ModelForm):
-    class Meta:
-        model = Category
-        fields = (
-            'title',
-        )
-
-        widgets = {
-            'title': forms.TextInput
-        }
-'''
 
 class BlogEntryForm(ModelForm):
     class Meta:
@@ -22,23 +9,29 @@ class BlogEntryForm(ModelForm):
         fields = (
             'title',
             #'primary_image',
-            'text_entry',
-            #'category'
+            'category',
+            'text_entry'
         )
 
         widgets = {
-            'text_entry': forms.Textarea(
+            'category': forms.Select(
                 attrs = {
-                    'cols': 80, 
-                    'rows': 20,
                     'class': 'form-control'
-                }
+                },
+                choices = Category.objects.all()
             ),
             'title': forms.TextInput(
                 attrs = {
                     'class': 'form-control'
                 }
             ),
+            'text_entry': forms.Textarea(
+                attrs = {
+                    'id': 'text-editor',
+                    'class': 'form-control'
+                }
+            )
+         
         }
 
     def save(self, commit=True):
