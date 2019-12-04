@@ -165,7 +165,7 @@ MESSAGE_TAGS = {
 
 LOGIN_REDIRECT_URL = reverse_lazy('blog:blog-list')
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 

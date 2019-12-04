@@ -18,7 +18,7 @@ class BlogEntryForm(ModelForm):
                 attrs = {
                     'class': 'form-control'
                 },
-                choices = Category.objects.all()
+                choices = []
             ),
             'title': forms.TextInput(
                 attrs = {
