@@ -16,6 +16,18 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='BlogEntry',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=100, verbose_name='Title')),
+                ('text_entry', tinymce.models.HTMLField()),
+                ('date_of_submission', models.DateTimeField()),
+                ('has_been_modified', models.BooleanField(default=False)),
+                ('date_updated', models.DateTimeField(default=None)),
+                ('author', models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+            ],
+        ),
+        migrations.CreateModel(
             name='Category',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
