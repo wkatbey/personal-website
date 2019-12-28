@@ -80,7 +80,7 @@ class BlogEntry(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     category = models.ForeignKey(
-        'Category', 
+        Category, 
         null=True, 
         blank=True, 
         on_delete=models.CASCADE
