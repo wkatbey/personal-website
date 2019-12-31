@@ -42,24 +42,34 @@
     <ul class="navbar-nav ml-auto navbar-right">
     {% block mobile-home-nav %}
       <li class="nav-item">
-        <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-link nav-text" href="{% url 'static_website:index' %}">
+          <img src="{% static 'static_website/svg/home-solid.svg' %}"> Home
+        </a>
       </li>
     {% endblock %}
     {% block mobile-resume-nav %}
       <li class="nav-item">
-        <a class="nav-link nav-text" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
+        <a class="nav-link nav-text" href="{% url 'static_website:resume' %}">
+          <img src="{% static 'static_website/svg/file-signature-solid.svg' %}"> Resume
+        </a>
       </li>
     {% endblock %}
     {% block mobile-blog-nav %}
       <li class="nav-item">
-        <a class="nav-link nav-text" href="{% url 'blog:blog-list' %}"><i class="fas fa-blog"></i> SkyBlue Blogging</a>
+        <a class="nav-link nav-text" href="{% url 'blog:blog-list' %}">
+          <img src="{% static 'static_website/svg/blog-solid.svg' %}"> SkyBlue Blogging
+        </a>
       </li>
     {% endblock %}
       <li class = "nav-item">
-        <a class="nav-link nav-text" href="http://www.sapphiredesignmi.com"><i class="fas fa-gem"></i> Sapphire Design</a>
+        <a class="nav-link nav-text" href="http://www.sapphiredesignmi.com">
+          <img src="{% static 'static_website/svg/gem-solid.svg' %}"> Sapphire Design
+        </a>
       </li>
       <li class = "nav-item">
-        <a class="nav-link nav-text" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
+        <a class="nav-link nav-text" href="http://github.com/wkatbey">
+          <img src="{% static 'static_website/svg/github-brands.svg' %}"> Github
+        </a>
       </li>
     </ul>
   </div>
@@ -77,19 +87,21 @@
         {% block desktop-home-nav %}
           <li class="nav-item">
             <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
-              <i class="fas fa-home"></i> Home
+              <img src="{% static 'static_website/svg/home-solid.svg' %}"> Home
             </a>
           </li>
         {% endblock %}
         {% block desktop-resume-nav %}
           <li class="nav-item">
-            <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}"><i class="fas fa-file-signature"></i> Resume</a>
+            <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}">
+              <img src="{% static 'static_website/svg/file-signature-solid.svg' %}"> Resume
+            </a>
           </li>
         {% endblock %}
         {% block desktop-blog-nav %}
           <li class="nav-item">
             <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
-              <i class="fas fa-blog"></i> SkyBlue Blogging
+              <img src="{% static 'static_website/svg/blog-solid.svg' %}"> SkyBlue Blogging
             </a>
           </li>
         {% endblock %}
@@ -98,10 +110,14 @@
         {% block blog-create-link %}
         {% endblock %}
           <li class = "nav-item">
-            <a class="nav-link nav-text nav-text--light" href="http://www.sapphiredesignmi.com"><i class="fas fa-gem"></i> Sapphire Design</a>
+            <a class="nav-link nav-text nav-text--light" href="http://www.sapphiredesignmi.com">
+              <img src="{% static 'static_website/svg/gem-solid.svg' %}"> Sapphire Design
+            </a>
           </li>
           <li class = "nav-item">
-            <a class="nav-link nav-text nav-text--light" href="http://github.com/wkatbey"><i class="fab fa-github"></i> Github</a>
+            <a class="nav-link nav-text nav-text--light" href="http://github.com/wkatbey">
+              <img src="{% static 'static_website/svg/github-brands.svg' %}"> Github
+            </a>
           </li>
         </ul>
       </div>
@@ -124,7 +140,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
-        <a class="text-muted" href="https://icons8.com/icon/77154/identity-theft">
+        <a class="text-muted" href="https://icons8.com">
           Check out Icons8! I used their icons
         </a>
       </div>

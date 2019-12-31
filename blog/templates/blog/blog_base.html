@@ -10,14 +10,16 @@
 
 {% block mobile-blog-nav %}
 <li class="nav-item active">
-  <a class="nav-link nav-text" href="{% url 'blog:blog-list' %}"><i class="fas fa-blog"></i> SkyBlue Blogging</a>
+    <a class="nav-link nav-text" href="{% url 'blog:blog-list' %}">
+        <img src="{% static 'static_website/svg/blog-solid.svg' %}"> SkyBlue Blogging
+    </a>
 </li>
 {% endblock %}
 
 {% block desktop-blog-nav %}
 <li class="nav-item active">
   <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
-    <i class="fas fa-blog"></i> SkyBlue Blogging
+    <img src="{% static 'static_website/svg/blog-solid.svg' %}"> SkyBlue Blogging
   </a>
 </li>
 {% endblock %}

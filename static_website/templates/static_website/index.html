@@ -1,4 +1,5 @@
 {% extends './base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block hero-image-text %}
@@ -17,7 +18,9 @@
 
 {% block mobile-home-nav %}
 <li class="nav-item active">
-    <a class="nav-link nav-text" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
+    <a class="nav-link nav-text" href="{% url 'static_website:index' %}">
+      <img src="{% static 'static_website/svg/home-solid.svg' %}"> Home
+    </a>
 </li>
 {% endblock %}
 
@@ -27,7 +30,9 @@
 
 {% block desktop-home-nav %}
 <li class="nav-item active">
-    <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}"><i class="fas fa-home"></i> Home</a>
+    <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
+      <img src="{% static 'static_website/svg/home-solid.svg' %}"> Home
+    </a>
 </li>
 {% endblock %}
 
