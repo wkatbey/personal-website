@@ -17,23 +17,29 @@
 {% endblock %}
 
 {% block mobile-home-nav %}
-<li class="nav-item active">
-    <a class="nav-link nav-text" href="{% url 'static_website:index' %}">
-      <img src="{% static 'static_website/svg/home-solid.svg' %}"> Home
-    </a>
+<li class="nav-item">
+  <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
+    <svg>
+      <use href="{% static 'static_website/icons/home-solid.svg#home' %}"></use>
+    </svg> 
+    <span class="svg-text">Home</span>
+  </a>
+</li>
+{% endblock %}
+
+{% block desktop-home-nav %}
+<li class="nav-item">
+  <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
+    <svg>
+      <use href="{% static 'static_website/icons/home-solid.svg#home' %}"></use>
+    </svg> 
+    <span class="svg-text">Home</span>
+  </a>
 </li>
 {% endblock %}
 
 {% block hero-image-type %}
 <div class = "hero-image">
-{% endblock %}
-
-{% block desktop-home-nav %}
-<li class="nav-item active">
-    <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
-      <img src="{% static 'static_website/svg/home-solid.svg' %}"> Home
-    </a>
-</li>
 {% endblock %}
 
 {% block body %}

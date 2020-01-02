@@ -6,10 +6,14 @@
     fill: white;
 }
 
-.nav-link img {
-    width: 1.4rem;
-    fill: white;
-    padding-bottom: 0.3rem;
+.nav-link svg {
+    
+    margin-left: 0.25rem;
+}
+
+.nav-link .svg-text {
+    float: right;
+    padding-left: 0.3rem;
 }
 
 .nav-text--dark {
@@ -18,7 +22,6 @@
 
 .nav-text--light {
     color: white;
-    fill: white;
 }
 
 .nav-text--dark:hover {
@@ -28,6 +31,7 @@
 
 .nav-text--light:hover {
     color: #cccecf;
+    fill: #cccecf;
 }
 
 .navbar-mobile {

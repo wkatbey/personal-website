@@ -42,33 +42,48 @@
     <ul class="navbar-nav ml-auto navbar-right">
     {% block mobile-home-nav %}
       <li class="nav-item">
-        <a class="nav-link nav-text" href="{% url 'static_website:index' %}">
-          <img src="{% static 'static_website/svg/home-solid.svg' %}"> Home
+        <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
+          <svg>
+            <use href="{% static 'static_website/icons/home-solid.svg#home' %}"></use>
+          </svg> 
+          <span class="svg-text">Home</span>
         </a>
       </li>
     {% endblock %}
     {% block mobile-resume-nav %}
       <li class="nav-item">
-        <a class="nav-link nav-text" href="{% url 'static_website:resume' %}">
-          <img src="{% static 'static_website/svg/file-signature-solid.svg' %}"> Resume
+        <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}">
+          <svg>
+            <use href="{% static 'static_website/icons/file-signature-solid.svg#resume' %}"></use>
+          </svg>
+          <span class="svg-text">Resume</span>
         </a>
       </li>
     {% endblock %}
     {% block mobile-blog-nav %}
       <li class="nav-item">
-        <a class="nav-link nav-text" href="{% url 'blog:blog-list' %}">
-          <img src="{% static 'static_website/svg/blog-solid.svg' %}"> SkyBlue Blogging
+        <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
+          <svg>
+            <use href="{% static 'static_website/icons/blog-solid.svg#sky-blue-blogging' %}"></use>
+          </svg>
+          <span class="svg-text">SkyBlue Blogging</span>
         </a>
       </li>
     {% endblock %}
       <li class = "nav-item">
-        <a class="nav-link nav-text" href="http://www.sapphiredesignmi.com">
-          <img src="{% static 'static_website/svg/gem-solid.svg' %}"> Sapphire Design
+        <a class="nav-link nav-text nav-text--light" href="http://www.sapphiredesignmi.com">
+          <svg>
+            <use href="{% static 'static_website/icons/gem-solid.svg#sapphire-design' %}"></use>
+          </svg>
+          <span class="svg-text">Sapphire Design</span>
         </a>
       </li>
       <li class = "nav-item">
-        <a class="nav-link nav-text" href="http://github.com/wkatbey">
-          <img src="{% static 'static_website/svg/github-brands.svg' %}"> Github
+        <a class="nav-link nav-text nav-text--light" href="http://github.com/wkatbey">
+          <svg>
+            <use href="{% static 'static_website/icons/github-brands.svg#github' %}"></use>
+          </svg>
+          <span class="svg-text">Github</span>
         </a>
       </li>
     </ul>
@@ -87,21 +102,30 @@
         {% block desktop-home-nav %}
           <li class="nav-item">
             <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
-              <img src="{% static 'static_website/svg/home-solid.svg' %}"> Home
+              <svg>
+                <use href="{% static 'static_website/icons/home-solid.svg#home' %}"></use>
+              </svg> 
+              <span class="svg-text">Home</span>
             </a>
           </li>
         {% endblock %}
         {% block desktop-resume-nav %}
           <li class="nav-item">
             <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}">
-              <img src="{% static 'static_website/svg/file-signature-solid.svg' %}"> Resume
+              <svg>
+                <use href="{% static 'static_website/icons/file-signature-solid.svg#resume' %}"></use>
+              </svg>
+              <span class="svg-text">Resume</span>
             </a>
           </li>
         {% endblock %}
         {% block desktop-blog-nav %}
           <li class="nav-item">
             <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
-              <img src="{% static 'static_website/svg/blog-solid.svg' %}"> SkyBlue Blogging
+              <svg>
+                <use href="{% static 'static_website/icons/blog-solid.svg#sky-blue-blogging' %}"></use>
+              </svg>
+              <span class="svg-text">SkyBlue Blogging</span>
             </a>
           </li>
         {% endblock %}
@@ -111,12 +135,18 @@
         {% endblock %}
           <li class = "nav-item">
             <a class="nav-link nav-text nav-text--light" href="http://www.sapphiredesignmi.com">
-              <img src="{% static 'static_website/svg/gem-solid.svg' %}"> Sapphire Design
+              <svg>
+                <use href="{% static 'static_website/icons/gem-solid.svg#sapphire-design' %}"></use>
+              </svg>
+              <span class="svg-text">Sapphire Design</span>
             </a>
           </li>
           <li class = "nav-item">
             <a class="nav-link nav-text nav-text--light" href="http://github.com/wkatbey">
-              <img src="{% static 'static_website/svg/github-brands.svg' %}"> Github
+              <svg>
+                <use href="{% static 'static_website/icons/github-brands.svg#github' %}"></use>
+              </svg>
+              <span class="svg-text">Github</span>
             </a>
           </li>
         </ul>
