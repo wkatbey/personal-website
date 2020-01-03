@@ -1,14 +1,18 @@
 .nav-text {
     /*font-family: "Roboto";*/
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 400;
     border-bottom: 0.25rem solid transparent;
     fill: white;
 }
 
+.nav-link {
+    margin-left: 0.4rem;
+}
+
 .nav-link svg {
-    
-    margin-left: 0.25rem;
+    width: 1.2rem;
+    height: 1.9rem;
 }
 
 .nav-link .svg-text {

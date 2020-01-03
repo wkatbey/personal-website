@@ -2,10 +2,13 @@
 {% load static %}
 
 {% block mobile-resume-nav %}
-<li class="nav-item active">
-    <a class="nav-link nav-text" href="">
-      <img src="{% static 'static_website/svg/file-signature-solid.svg' %}"> Resume
-    </a>
+<li class="nav-item">
+  <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}">
+    <svg>
+      <use href="{% static 'static_website/icons/file-signature-solid.svg#resume' %}"></use>
+    </svg>
+    <span class="svg-text">Resume</span>
+  </a>
 </li>
 {% endblock %}
 
@@ -15,9 +18,14 @@
 
 {% block desktop-resume-nav %}
 <li class="nav-item active">
-    <a class="nav-link nav-text nav-text--light" href="">
-      <img src="{% static 'static_website/svg/file-signature-solid.svg' %}"> Resume
+  <li class="nav-item">
+    <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}">
+      <svg>
+        <use href="{% static 'static_website/icons/file-signature-solid.svg#resume' %}"></use>
+      </svg>
+      <span class="svg-text">Resume</span>
     </a>
+  </li>
 </li>
 {% endblock %}
 
