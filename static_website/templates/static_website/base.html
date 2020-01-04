@@ -41,7 +41,7 @@
   <div class="collapse navbar-collapse" id="navbarMobileContent">
     <ul class="navbar-nav ml-auto navbar-right">
     {% block mobile-home-nav %}
-      <li class="nav-item">
+      <li class="nav-item mobile">
         <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
           <svg>
             <use href="{% static 'static_website/icons/home-solid.svg#home' %}"></use>
@@ -51,7 +51,7 @@
       </li>
     {% endblock %}
     {% block mobile-resume-nav %}
-      <li class="nav-item">
+      <li class="nav-item mobile">
         <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:resume' %}">
           <svg>
             <use href="{% static 'static_website/icons/file-signature-solid.svg#resume' %}"></use>
@@ -61,7 +61,7 @@
       </li>
     {% endblock %}
     {% block mobile-blog-nav %}
-      <li class="nav-item">
+      <li class="nav-item mobile">
         <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
           <svg>
             <use href="{% static 'static_website/icons/blog-solid.svg#sky-blue-blogging' %}"></use>
@@ -70,7 +70,7 @@
         </a>
       </li>
     {% endblock %}
-      <li class = "nav-item">
+      <li class = "nav-item mobile">
         <a class="nav-link nav-text nav-text--light" href="http://www.sapphiredesignmi.com">
           <svg>
             <use href="{% static 'static_website/icons/gem-solid.svg#sapphire-design' %}"></use>
@@ -78,7 +78,7 @@
           <span class="svg-text">Sapphire Design</span>
         </a>
       </li>
-      <li class = "nav-item">
+      <li class = "nav-item mobile">
         <a class="nav-link nav-text nav-text--light" href="http://github.com/wkatbey">
           <svg>
             <use href="{% static 'static_website/icons/github-brands.svg#github' %}"></use>

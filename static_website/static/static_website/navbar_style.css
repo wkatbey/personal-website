@@ -1,4 +1,4 @@
-.nav-text {
+.nav-item .nav-text {
     /*font-family: "Roboto";*/
     font-size: 1.25rem;
     font-weight: 400;
@@ -6,18 +6,30 @@
     fill: white;
 }
 
-.nav-link {
+.nav-item .nav-link {
     margin-left: 0.4rem;
 }
 
-.nav-link svg {
+.nav-item .nav-link svg {
     width: 1.2rem;
     height: 1.9rem;
 }
 
-.nav-link .svg-text {
+.nav-item.mobile .nav-link svg {
+    height: 1rem;
+}
+
+.nav-item.mobile .nav-link .svg-text {
+    float: unset;
+}
+
+.nav-item .nav-link .svg-text {
     float: right;
     padding-left: 0.3rem;
+}
+
+.nav-link .svg-text.mobile {
+    float: unset;
 }
 
 .nav-text--dark {
