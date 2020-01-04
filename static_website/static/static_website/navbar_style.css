@@ -7,12 +7,12 @@
 }
 
 .nav-item .nav-link {
-    margin-left: 0.4rem;
+    margin-left: 3rem;
 }
 
 .nav-item .nav-link svg {
-    width: 1.2rem;
-    height: 1.9rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 .nav-item.mobile .nav-link svg {
