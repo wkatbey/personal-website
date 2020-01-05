@@ -3,6 +3,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    height: 100vh;
 }
 
 .hero-resume {
@@ -58,21 +60,13 @@
     text-align: center;
 }
 
-/* Laptop L and Desktop Displays */
 @media (min-width: 1101px) {
-    .hero-image {
-        height: 100vh;
-    }
-
-    @media (max-height: 600px ) {
+    @media (max-height: 900px) {
         .hero-image {
-            height: 40rem;
+            height: 56.25rem;
         }
     }
 }
-
-
-@media (min-width: )
 
 /* Large Tablet and Small Laptop Displays */
 @media (min-width: 769px) and (max-width: 1100px) {
@@ -103,9 +97,11 @@
         }
     }
 
-    @media (max-height: 700px) {
+    /* If the user resizes their browser's height (while
+    maintaining their viewport's width) */
+    @media (max-height: 650px) {
         .hero-image {
-            height: 30rem;
+            height: 40rem;
         }
     }
 }
@@ -141,6 +137,26 @@
         transform: translate(0rem, 11rem);
     }
 
+    .hero-image {
+        height: 100vh;
+        background-position: top;
+        background: linear-gradient(to top, #429bf5, #0021f5);
+    }
+
+
+    .hero-home-heading {
+        font-size: 2.4rem;
+    }
+    .hero-home-subheading {
+        font-size: 1.4rem;
+    }
+    .hero-small-heading {
+        font-size: 2.2rem;
+    }
+    .hero-small-subheading {
+        font-size: 1.5rem;
+    }
+
     /* If the user resizes their browser's width (while
     maintaining their viewport's height) */
     @media (min-height: 900px) {
@@ -156,23 +172,12 @@
         }
     }
 
-    .hero-home-heading {
-        font-size: 2.4rem;
-    }
-    .hero-home-subheading {
-        font-size: 1.4rem;
-    }
-    .hero-small-heading {
-        font-size: 2.2rem;
-    }
-    .hero-small-subheading {
-        font-size: 1.5rem;
-    }
-
-    .hero-image {
-        height: 100vh;
-        background-position: top;
-        background: linear-gradient(to top, #429bf5, #0021f5);
+    /* If the user resizes their browser's height (while
+    maintaining their viewport's width) */
+    @media (max-height: 500px) {
+        .hero-image {
+            height: 32rem;
+        }
     }
 }
 
