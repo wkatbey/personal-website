@@ -16,24 +16,12 @@
 </div>
 {% endblock %}
 
-{% block mobile-home-nav %}
-<li class="nav-item mobile">
-  <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
-    <svg>
-      <use href="{% static 'static_website/icons/home-solid.svg#home' %}"></use>
-    </svg> 
-    <span class="svg-text">Home</span>
-  </a>
-</li>
-{% endblock %}
-
 {% block desktop-home-nav %}
 <li class="nav-item">
-  <a class="nav-link nav-text nav-text--light" href="{% url 'static_website:index' %}">
+  <a class="nav-text nav-text--light" href="{% url 'static_website:index' %}">
     <svg>
       <use href="{% static 'static_website/icons/home.svg#home' %}"></use>
     </svg> 
-    <!-- <span class="svg-text">Home</span> -->
   </a>
 </li>
 {% endblock %}

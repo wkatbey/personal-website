@@ -1,5 +1,5 @@
 .hero-blog-image {
-    background-image: url("./blue.jpg");
+    background-image: linear-gradient(to top, #5a52ff, #ff5291);
     height: 30rem;
     background-position: top;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@
 }
 
 .hero-blog-small-image {
-    background-image: url("./blue.jpg");
+    background-image: linear-gradient(to top, #5a52ff, #ff878d);
     height: 10rem;
     background-position: top;
     background-repeat: no-repeat;
@@ -16,6 +16,7 @@
 
 .hero-blog-text {
     transform: translateY(7rem);
+    color: white;
 }
 
 .hero-blog-heading {
