@@ -11,6 +11,7 @@ from .category_traversal import get_blogs_by_category
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from operator import attrgetter
 
 '''
 class CategoryList(ListView):
@@ -68,6 +69,13 @@ class BlogEntryList(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        blog_entries = list(context['blog_entries'])
+
+        blog_entries = sorted(blog_entries, key=attrgetter('date_of_submission'))
+
+        blog_entries.reverse()
+
+        context['blog_entries'] = blog_entries
         return context
 
 class BlogEntryDetail(DetailView):

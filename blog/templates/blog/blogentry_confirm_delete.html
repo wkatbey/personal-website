@@ -1,12 +1,5 @@
-{% extends 'static_website/base.html' %}
+{% extends 'blog/blog_base.html' %} 
 {% load static %}
-
-{% block head_elements %}
-<link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'blog/spacing.css' %}"> 
-<link rel="stylesheet" href="{% static 'blog/hero-image.css' %}"> 
-<link rel="stylesheet" href="{% static 'blog/fonts.css' %}"> 
-{% endblock %}
 
 {% block hero-image-type %}
 <div class="hero-blog-small-image">
@@ -17,7 +10,7 @@
 
 {% block body %}
 <div class="container">
-    <p class="heading-text text-center">Confirmation</p>
+    <p class="heading-text text-center padding-top">Confirmation</p>
     <div class="row">
         <div class="col-lg-12">
             <div class="text-center">
