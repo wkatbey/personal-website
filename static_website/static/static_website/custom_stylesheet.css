@@ -217,9 +217,6 @@ html {
     div.hide-on-mobile {
         display: none;
     }
-    div.hero-text {
-        transform: translate(1rem, 1rem);
-    }
 }
 
 @media (min-device-width: 992px) and (max-device-width: 1199.98px) {
