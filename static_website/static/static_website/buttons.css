@@ -3,6 +3,31 @@
     text-align: center;
 }
 
+.btn-outline-gradient {
+    width: 15rem;
+    height: 4rem;
+    
+    color: white;
+
+    font-size: 1.6rem;
+
+    background-color: transparent;
+
+    border-image: linear-gradient(to right, #87d3ff, #ffffff);
+
+    border-image-slice: 1;
+
+
+    border-width: 0.1rem;
+}
+
+.btn-outline-gradient:hover {
+    /*color: #aa80ff;*/
+    cursor: pointer;
+
+    background-color: rgba(253, 252, 255, 0.4);
+}
+
 .btn-hover {
     width: 12.5rem;
     font-size: 1.2rem;

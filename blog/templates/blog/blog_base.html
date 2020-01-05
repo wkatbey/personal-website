@@ -8,24 +8,12 @@
 <link rel="stylesheet" href="{% static 'blog/fonts.css' %}">
 {% endblock %} 
 
-{% block mobile-blog-nav %}
-<li class="nav-item mobile">
-    <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
-        <svg>
-        <use href="{% static 'static_website/icons/blog-solid.svg#sky-blue-blogging' %}"></use>
-        </svg>
-        <span class="svg-text">SkyBlue Blogging</span>
-    </a>
-</li>
-{% endblock %}
-
 {% block desktop-blog-nav %}
 <li class="nav-item">
-    <a class="nav-link nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
+    <a class="nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
         <svg>
-        <use href="{% static 'static_website/icons/blog-solid.svg#sky-blue-blogging' %}"></use>
+        <use href="{% static 'static_website/icons/blog.svg#blog' %}"></use>
         </svg>
-        <span class="svg-text">SkyBlue Blogging</span>
     </a>
 </li>
 {% endblock %}
