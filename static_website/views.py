@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, View
 from static_website.forms import ContactForm
 from django.core.mail import send_mail
+from .models import *
+from .tools.mapping import *
 
 COMPANY_EMAIL = 'katbeywassim@gmail.com'
 DEFAULT_SUBJECT = 'Website Email'
@@ -11,7 +13,22 @@ class Home(View):
 
     def get(self, request):
         form = ContactForm()
-        return render(request, self.template_name, {'form': form})
+
+        try:
+            # Retrieve the introduction text from the 
+            # database
+            home_page_model = HomePage.objects.all().first()
+
+            home_page = construct_home_page_from_model(home_page_model)
+        except HomePage.DoesNotExist:
+            home_page = construct_home_page_from_model(None)
+
+        context = {
+            'home_page': home_page,
+            'form': form,
+        }
+
+        return render(request, self.template_name, context)
 
     def post(self, request):
         context = {}
