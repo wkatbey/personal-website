@@ -61,11 +61,22 @@
 }
 
 @media (min-width: 1101px) {
-    @media (max-height: 900px) {
+
+    @media (max-height: 600px) {
         .hero-image {
-            height: 56.25rem;
+            height: 37.5rem;
         }
     }
+
+    @media (max-height: 900px) {
+        .hero-image {
+            background: linear-gradient(to top, #429bf5, #0021f5);
+        }
+
+  
+    }
+
+  
 }
 
 /* Large Tablet and Small Laptop Displays */
