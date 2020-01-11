@@ -73,6 +73,9 @@ class BlogEntryList(ListView):
 
         blog_entries = sorted(blog_entries, key=attrgetter('date_of_submission'))
 
+        # Filtering out private entries
+        blog_entries = list(filter(lambda entry: not entry.private, blog_entries))
+
         blog_entries.reverse()
 
         context['blog_entries'] = blog_entries
