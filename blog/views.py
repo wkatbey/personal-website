@@ -108,7 +108,11 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         blog = form.save()
         blog.author = self.request.user
+
+        # If 'private' is specified in the url following the view's base url,
+        # then this post is to be made private
         blog.private = self.kwargs.get('optional_param', '') == 'private'
+        
         blog.save()
         return HttpResponseRedirect(reverse_lazy('blog:blog-detail', kwargs = {
             'pk': blog.id
