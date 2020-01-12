@@ -31,6 +31,12 @@ class BlogEntryForm(ModelForm):
                     'id': 'text-editor',
                     'class': 'form-control'
                 }
+            ),
+            'private': forms.CheckboxInput(
+                attrs = {
+                    'id': 'make-post-private',
+                    'class': 'custom-control-input'
+                }
             )
         }
 
