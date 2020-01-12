@@ -97,9 +97,7 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
     form_class = BlogEntryForm
 
     def post(self, request, *args, **kwargs):
-        self.object = None
-
-        print(request.POST['text_entry'])
+        form = self.get_form()
         return super().post(request, *args, **kwargs)
 
     def get_login_url(self):
@@ -110,6 +108,7 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         blog = form.save()
         blog.author = self.request.user
+        blog.private = self.kwargs.get('optional_param', '') == 'private'
         blog.save()
         return HttpResponseRedirect(reverse_lazy('blog:blog-detail', kwargs = {
             'pk': blog.id

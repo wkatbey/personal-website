@@ -16,7 +16,7 @@
 
 {% block blog_body %}
 <div class="container">
-    <form method='POST'>
+    <form id='blog-form' method='POST'>
       {% csrf_token %}
       <div class="form-group padding-top">
         {{ form.category.label_tag }}
@@ -44,7 +44,7 @@
             </button>
 
             <div class="dropdown-menu">
-              <input type="submit" class="dropdown-item" value="Post Privately">
+              <a type="button" class="btn btn-outline-primary dropdown-item" onClick='submitPrivatePost()'>Post Privately</a>
             </div>
           </div>
           {% endif %}
@@ -65,5 +65,3 @@
     </div>
 </div>
 {% endblock %}
-
-
