@@ -34,6 +34,10 @@
     background-image: linear-gradient(to top, #ff8af7, #6171ff);
 }
 
+.hero-blog-image-small.detail {
+    background-image: linear-gradient(to top, #4a80ff, #564aff);
+}
+
 .hero-blog-text {
     transform: translateY(7rem);
     color: white;
