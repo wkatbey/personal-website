@@ -2,7 +2,11 @@
 {% load static %} 
 
 {% block hero-image-type %}
-<div class="hero-blog-image">
+<div class="{% if user.is_authenticated %} 
+            hero-blog-image--authenticated
+            {% else %}
+            hero-blog-image
+            {% endif %}">
 {% endblock %} 
 
 {% block hero-image-text %}

@@ -6,12 +6,32 @@
     background-size: cover;
 }
 
-.hero-blog-small-image {
-    background-image: linear-gradient(to top, #5a52ff, #ff878d);
+.hero-blog-image--authenticated {
+    background-image: linear-gradient(to top, #5a52ff, #ff52f1);
+    height: 30rem;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-blog-image-small {
+    background-image: linear-gradient(to top, #1100ff, #0044ff);
     height: 10rem;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.hero-blog-image-small.write {
+    background-image: linear-gradient(to top, #1100ff, #0044ff);
+}
+
+.hero-blog-image-small.user-posts {
+    background-image: linear-gradient(to top, #9a8cff, #9354ff);
+}
+
+.hero-blog-image-small.user-list {
+    background-image: linear-gradient(to top, #8abdff, #6171ff);
 }
 
 .hero-blog-text {
