@@ -10,7 +10,8 @@ class BlogEntryForm(ModelForm):
             'title',
             #'primary_image',
             'category',
-            'text_entry'
+            'text_entry',
+            'private'
         )
 
         widgets = {
@@ -31,7 +32,6 @@ class BlogEntryForm(ModelForm):
                     'class': 'form-control'
                 }
             )
-         
         }
 
     def save(self, commit=True):

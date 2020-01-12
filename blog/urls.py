@@ -5,7 +5,7 @@ from . import views
 app_name = 'blog'
 urlpatterns = [
     path('', views.BlogEntryList.as_view(), name='blog-list'),
-    path('create/', views.BlogEntryCreate.as_view(), name='blog-create'),
+    path(r'^create/(?P<optional_param>[\w\-]+)/$', views.BlogEntryCreate.as_view(), name='blog-create'),
     path('update/<int:pk>/', views.BlogEntryUpdate.as_view(), name='blog-update'),
     path('delete/<int:pk>/', views.BlogEntryDelete.as_view(), name='blog-delete'),
     path('view/<int:pk>/', views.BlogEntryDetail.as_view(), name='blog-detail'),

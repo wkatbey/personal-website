@@ -28,7 +28,7 @@
     {% if user.is_authenticated %}
     <div class="blog-nav-item">
         <i class="fas fa-edit"></i>
-        <a class="gray-link" href="{% url 'blog:blog-create' %}">
+        <a class="gray-link" href="{% url 'blog:blog-create' '' %}">
             Write a new Entry
         </a>
     </div>
