@@ -6,12 +6,8 @@
     background-size: cover;
 }
 
-.hero-blog-image--authenticated {
+.hero-blog-image.authenticated {
     background-image: linear-gradient(to top, #5a52ff, #ff52f1);
-    height: 30rem;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .hero-blog-image-small {
@@ -32,6 +28,10 @@
 
 .hero-blog-image-small.user-list {
     background-image: linear-gradient(to top, #8abdff, #6171ff);
+}
+
+.hero-blog-image-small.delete-confirmation {
+    background-image: linear-gradient(to top, #ff8af7, #6171ff);
 }
 
 .hero-blog-text {
