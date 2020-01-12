@@ -1,12 +1,8 @@
 {% extends 'blog/blog_base.html' %} 
 {% load static %} 
 
-{% block custom_head_elements %}
-
-{% endblock %}
-
 {% block hero-image-type %}
-<div class="hero-blog-small-image">
+<div class="hero-blog-image-small write">
 {% endblock %} 
 
 {% block hero-image-text %}
@@ -20,7 +16,7 @@
 
 {% block blog_body %}
 <div class="container">
-    <form method='POST'>
+    <form id='blog-form' method='POST'>
       {% csrf_token %}
       <div class="form-group padding-top">
         {{ form.category.label_tag }}
@@ -35,10 +31,26 @@
       </div>
       <div class="row pt-2">
         <div class="col-lg-12 text-right">
+
+
           {% if object %}
+          <div class="custom-control custom-checkbox mr-sm-2" style="display: inline">
+            {{ form.private }}
+            <label class="custom-control-label" for="make-post-private">Make Post Private</label>
+          </div>
           <input type="submit" class="btn btn-outline-primary" value="Save Changes">
           {% else %}
-          <input type="submit" class="btn btn-outline-primary" value="Post">
+          <div class="btn-group">
+            <input type="submit" class="btn btn-outline-primary" value="Post">
+            
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Post Options Dropdown</span>
+            </button>
+
+            <div class="dropdown-menu">
+              <a type="button" class="btn btn-outline-primary dropdown-item" onClick='submitPrivatePost()'>Post Privately</a>
+            </div>
+          </div>
           {% endif %}
         </div>
       </div>
@@ -57,5 +69,3 @@
     </div>
 </div>
 {% endblock %}
-
-

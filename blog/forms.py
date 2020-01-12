@@ -10,7 +10,8 @@ class BlogEntryForm(ModelForm):
             'title',
             #'primary_image',
             'category',
-            'text_entry'
+            'text_entry',
+            'private'
         )
 
         widgets = {
@@ -30,8 +31,13 @@ class BlogEntryForm(ModelForm):
                     'id': 'text-editor',
                     'class': 'form-control'
                 }
+            ),
+            'private': forms.CheckboxInput(
+                attrs = {
+                    'id': 'make-post-private',
+                    'class': 'custom-control-input'
+                }
             )
-         
         }
 
     def save(self, commit=True):

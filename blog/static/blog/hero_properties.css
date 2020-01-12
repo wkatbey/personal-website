@@ -1,21 +1,46 @@
 .hero-blog-image {
-    background-image: url("./blue.jpg");
+    background-image: linear-gradient(to top, #5a52ff, #ff5291);
     height: 30rem;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.hero-blog-small-image {
-    background-image: url("./blue.jpg");
+.hero-blog-image.authenticated {
+    background-image: linear-gradient(to top, #5a52ff, #ff52f1);
+}
+
+.hero-blog-image-small {
+    background-image: linear-gradient(to top, #1100ff, #0044ff);
     height: 10rem;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.hero-blog-image-small.write {
+    background-image: linear-gradient(to top, #1100ff, #0044ff);
+}
+
+.hero-blog-image-small.user-posts {
+    background-image: linear-gradient(to top, #9a8cff, #9354ff);
+}
+
+.hero-blog-image-small.user-list {
+    background-image: linear-gradient(to top, #8abdff, #6171ff);
+}
+
+.hero-blog-image-small.delete-confirmation {
+    background-image: linear-gradient(to top, #ff8af7, #6171ff);
+}
+
+.hero-blog-image-small.detail {
+    background-image: linear-gradient(to top, #4a80ff, #564aff);
+}
+
 .hero-blog-text {
     transform: translateY(7rem);
+    color: white;
 }
 
 .hero-blog-heading {

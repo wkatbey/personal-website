@@ -2,7 +2,10 @@
 {% load static %} 
 
 {% block hero-image-type %}
-<div class="hero-blog-image">
+<div class="hero-blog-image
+            {% if user.is_authenticated %} 
+            authenticated
+            {% endif %}">
 {% endblock %} 
 
 {% block hero-image-text %}
@@ -13,7 +16,7 @@
             Read and Write Entries
         </p>
         {% else %}
-        <p class="hero-blog-heading text-center">SkyBlue Blogging</p>
+        <p class="hero-blog-heading text-center">Sapphire Blogging</p>
         <p class="hero-blog-subheading text-center">
             A Simple Journaling Platform
         </p>
@@ -25,7 +28,7 @@
     {% if user.is_authenticated %}
     <div class="blog-nav-item">
         <i class="fas fa-edit"></i>
-        <a class="gray-link" href="{% url 'blog:blog-create' %}">
+        <a class="gray-link" href="{% url 'blog:blog-create' 'none' %}">
             Write a new Entry
         </a>
     </div>
@@ -66,7 +69,4 @@
     </div>
     {% endfor %}
 </div>
-{% endblock %}
-
-{% block custom_footer_elements %}
 {% endblock %}

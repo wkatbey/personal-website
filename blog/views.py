@@ -11,6 +11,7 @@ from .category_traversal import get_blogs_by_category
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from operator import attrgetter
 
 '''
 class CategoryList(ListView):
@@ -68,6 +69,16 @@ class BlogEntryList(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        blog_entries = list(context['blog_entries'])
+
+        blog_entries = sorted(blog_entries, key=attrgetter('date_of_submission'))
+
+        # Filtering out private entries
+        blog_entries = list(filter(lambda entry: not entry.private, blog_entries))
+
+        blog_entries.reverse()
+
+        context['blog_entries'] = blog_entries
         return context
 
 class BlogEntryDetail(DetailView):
@@ -86,9 +97,7 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
     form_class = BlogEntryForm
 
     def post(self, request, *args, **kwargs):
-        self.object = None
-
-        print(request.POST['text_entry'])
+        form = self.get_form()
         return super().post(request, *args, **kwargs)
 
     def get_login_url(self):
@@ -99,6 +108,11 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         blog = form.save()
         blog.author = self.request.user
+
+        # If 'private' is specified in the url following the view's base url,
+        # then this post is to be made private
+        blog.private = self.kwargs.get('optional_param', '') == 'private'
+        
         blog.save()
         return HttpResponseRedirect(reverse_lazy('blog:blog-detail', kwargs = {
             'pk': blog.id
@@ -107,7 +121,7 @@ class BlogEntryCreate(LoginRequiredMixin, CreateView):
     def form_invalid(self, form):
         print(form.cleaned_data['text_entry'])
         return HttpResponseRedirect(reverse_lazy('blog:blog-list'))
-
+        
 class BlogEntryUpdate(LoginRequiredMixin, UpdateView):
     model = BlogEntry
     form_class = BlogEntryForm

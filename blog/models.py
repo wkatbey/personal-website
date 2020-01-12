@@ -73,11 +73,12 @@ class BlogEntry(models.Model):
     )
 
     #primary_image = models.ImageField(verbose_name="Primary Image")
-    text_entry = HTMLField()
+    text_entry = models.TextField()
     date_of_submission = models.DateTimeField()
     has_been_modified = models.BooleanField(default=False)
     date_updated = models.DateTimeField(default=None)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    private = models.BooleanField(default=False)
 
     category = models.ForeignKey(
         Category, 
