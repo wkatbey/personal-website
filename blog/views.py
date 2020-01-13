@@ -142,10 +142,17 @@ class MyPosts(View):
 
     def get(self, request, pk):
         user = User.objects.get(pk=pk)
-        blogs = BlogEntry.objects.all().filter(author=user)
+        blog_entries = list(BlogEntry.objects.all().filter(author=user))
+
+        blog_entries = sorted(blog_entries, key=attrgetter('date_of_submission'))
+
+        if self.request.user != user:
+            # Filtering out private entries if the user is viewing another user's
+            # blog
+            blog_entries = list(filter(lambda entry: not entry.private, blog_entries))
 
         context = {
-            'blogs': blogs,
+            'blogs': blog_entries,
             'user_viewed': user
         }
 
