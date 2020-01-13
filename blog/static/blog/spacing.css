@@ -1,21 +1,18 @@
-.blog-heading--without-preceeding-icon {
-	padding-left: 1.9rem;
+.blog-entry-row {
+	margin-bottom: 3rem;
 }
 
 .blog-heading-icon {
     padding-left: 1rem;
 }
 
-.blog-heading-icon.preceeding {
-	/*padding-right: 0.5rem;*/
+.blog-heading-icon.no-padding {
 	padding-left: 0;
 }
 
 .blog-heading-icon svg {
 	width: 1.5rem;
 	height: 1.1rem;
-
-
 }
 
 #editor-container {
