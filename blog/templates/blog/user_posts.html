@@ -29,9 +29,11 @@
         <div class="col-lg-6">
             <p class="reading-font">
                 {% if blog.private %}
-                <span class="blog-heading-icon--preceeding">
-                    <i class="fas fa-lock"></i>
-                </span>
+                <a class="blog-heading-icon preceeding" href="{% url 'static_website:resume' %}">
+                  <svg>
+                    <use href="{% static 'blog/icons/lock.svg#lock' %}"></use>
+                  </svg>
+                </a>
                 {% endif %}
                 
                 <a  class="gray-link 
