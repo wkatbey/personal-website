@@ -7,7 +7,15 @@
 }
 
 .blog-heading-icon.preceeding {
-	padding-right: 0.5rem;
+	/*padding-right: 0.5rem;*/
+	padding-left: 0;
+}
+
+.blog-heading-icon svg {
+	width: 1.5rem;
+	height: 1.1rem;
+
+
 }
 
 #editor-container {
