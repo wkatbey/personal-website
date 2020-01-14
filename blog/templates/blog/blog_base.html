@@ -47,20 +47,22 @@
                     {% endblock %}
 
                     {% if user.is_authenticated %}
-                        {% block navbar_item_2 %}
+                    {% block navbar_item_2 %}
+                        <div class="blog-nav-item">
+                            <i class="fas fa-edit"></i>
+                            <a class="gray-link" href="{% url 'blog:blog-create' 'none' %}">
+                                Write
+                            </a>
+                        </div>
+                    {% endblock %}
+                    {% endif %}
+
+                    {% if user.is_authenticated %}
+                        {% block navbar_item_3 %}
                             <div class="blog-nav-item">
                                 <i class="fas fa-th-large"></i> 
                                 <a class="gray-link" href="{% url 'blog:user-posts' user.id %}">
                                     My Blog
-                                </a>
-                            </div>
-                        {% endblock %}
-
-                        {% block navbar_item_3 %}
-                            <div class="blog-nav-item">
-                                <i class="fas fa-id-card"></i>
-                                <a class="gray-link" href="#">
-                                    My Profile
                                 </a>
                             </div>
                         {% endblock %}
@@ -83,7 +85,7 @@
                             </div> 
                         {% endblock %}
                     {% else %}
-                        {% block navbar_item_6 %}
+                        {% block navbar_item_76 %}
                             <div class="blog-nav-item">
                                 <i class="fas fa-sign-in-alt"></i>
                                 <a class="gray-link" href="{% url 'user:login' %}">
