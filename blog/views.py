@@ -85,11 +85,23 @@ class BlogEntryDetail(DetailView):
     model = BlogEntry
     context_object_name = 'blog_entry'
 
+
+    def get(self, request, *args, **kwargs):
+        # Preventing anyone from accessing a private blog through 
+        # its id in the address bar
+        if self.get_object().private:
+            user = self.request.user
+            if not user.is_authenticated or self.get_object().author != user:
+                return HttpResponseRedirect(reverse_lazy('blog:blog-list'))
+
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         category_list = context['blog_entry'].get_category_list()
         context['breadcrumbs'] = enumerate(category_list)
         context['breadcrumbs_max'] = len(category_list)-1
+
         return context
 
 class BlogEntryCreate(LoginRequiredMixin, CreateView):
