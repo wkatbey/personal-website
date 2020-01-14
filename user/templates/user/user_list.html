@@ -1,14 +1,6 @@
 {% extends 'blog/blog_base.html' %} 
 {% load static %} 
 
-{% block custom_head_elements %}
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-<script src='https://cdn.tiny.cloud/1/9lidlfl9gfd74zusr0iykq72dtxk48gnba2vupju5j0gdmfs/tinymce/5/tinymce.min.js'></script>
-<script>
-  tinymce.init({selector:'textarea'});
-</script>
-{% endblock %}
-
 {% block hero-image-type %}
 <div class="hero-blog-image-small user-list">
 {% endblock %} 
