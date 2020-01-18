@@ -1,4 +1,5 @@
-from .models import *
+from ..models import *
+import os, os.path
 
 def get_intro_text():
 	text = ''
@@ -56,7 +57,7 @@ def get_default_home_page():
 			heading_icon='https://img.icons8.com/nolan/64/cafe.png',
 			text = [
 				PageSectionText(
-					value=discover_my_work_text
+					value=discover_my_work_text,
 					cols=12
 				)
 			]
