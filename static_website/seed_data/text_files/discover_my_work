@@ -1,0 +1,5 @@
+Now that we're well acquainted, take some time to look through my work. If you're looking to see projects I'm currently working on, check out my <a style = "color: #696969" href = "http://github.com/wkatbey">Github</a>. If you're an employer, looking for a detailed, technical skillset, you'll find all that and more in <a style = "color: #696969" href = "{% url 'static_website:resume' %}">Resume</a>
+
+
+-- TEXT DIVIDER --
+
