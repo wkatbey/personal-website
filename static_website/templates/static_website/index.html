@@ -40,18 +40,9 @@
   	<div class="row padding-bottom">
       <div class="col-lg-2"></div>
       <div class="col-lg-8 align-self-center">
-        <p class = "reading-font">
-          My name is Wassim, and I study Computer Science at Wayne State University. <br><br>I write web applications using a variety of frameworks.
-          I've used several frameworks for both academic, side, and professional work. I like learning about, and experimenting with new web technologies,
-          like Angular and Vue. However, my qualities go beyond technical skillset.
-        </p>
-        <br>
-        <p class = "reading-font">
-          Besides work, I have lots of hobbies and interests. I love Aviation, catch up on the latest in the industry, and use a flight simulator.
-
-          I love Architecture and Civil Engineering, and watch many documentaries depicting the construction of symbolic skyscrapers.
-          Additionally, I like photography (I took every photo on this website!).
-        </p>
+        <div class='reading-font'>
+          {{ home_page.intro | linebreaks }}
+        </div>
       </div>
     </div>
   </div>
@@ -96,40 +87,26 @@
   	</div>
   </div>
   <div class="container">
-    <p class = "heading-text padding-top padding-bottom text-center">
-      Discover my work <img src="https://img.icons8.com/nolan/64/cafe.png">
+
+    {% for page_section in home_page.page_sections %}
+    <p class="heading-text padding-top padding-bottom text-center">
+      {{ page_section.heading }} <img src="{{ page_section.heading_icon }}">
     </p>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="reading-font">
-        Now that we're well acquainted, take some time to look through my work. If you're looking to see projects I'm currently working on, check out my
-        <a style = "color: #696969" href = "http://github.com/wkatbey">Github</a>. If you're an employer, looking for a detailed, technical skillset, you'll find all that and more in
-        <a style = "color: #696969" href = "{% url 'static_website:resume' %}">Resume</a>
-        </div>
+    <div class="row reading-font">
+      {% for text in page_section.text %}
+      <div class="col-lg-{{text.col_length}}">
+        <p class="reading-font">
+          {% with text=text.value|safe %}
+          {{ text | linebreaks }}
+          {% endwith %}
+        </p>
       </div>
+      {% endfor %}
     </div>
+    
+    {% endfor %}
   </div>
-  <br>
   <div class="container">
-    <p class = "heading-text padding-top padding-bottom text-center">
-      Let's get in contact <img src="https://img.icons8.com/nolan/64/contacts.png">
-    </p>
-    <div class="row">
-      <div class = "col-lg-4">
-        <div class="card border-secondary mb-3" style="max-width: 25rem;">
-          <div class="card-header">Wassim Katbey</div>
-          <div class="card-body text-secondary">
-            <p class="card-text">Phone Number: (313)-421-0627</p>
-            <p class="card-text">Email: katbeywassim@gmail.com</p>
-          </div>
-        </div>
-      </div>
-      <div class = "col-lg-7">
-        <div class = "reading-font">
-          You can call me from Monday-Friday, 10AM-6PM. Additionally, you can send me an email any day of the week, I check my email often
-        </div>
-      </div>
-    </div>
     <p class = "heading-text padding-top padding-bottom text-center">
       Send me an Email! <img class="pb-2" src="https://img.icons8.com/nolan/64/email.png">
     </p>
