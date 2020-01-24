@@ -55,5 +55,3 @@ class Home(View):
 
 def resume(request):
     return render(request, 'static_website/resume.html', {})
-
-
