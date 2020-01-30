@@ -11,7 +11,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.views import LoginView
-from user.forms import UserRegistrationForm
+from user.forms import UserRegistrationForm, UserLoginForm
 
 class UserRegistrationView(View):
     def post(self, request):
@@ -46,12 +46,30 @@ class UserRegistrationView(View):
 
         return render(request, 'user/register.html', context)
 
-class UserLoginView(LoginView):
-    template_name = 'user/login.html'
-    success_url = reverse_lazy('blog:blog-list')
+class UserLoginView(View):
+    def post(self, request):
+        user_login_form = UserLoginForm(request.POST)
 
-    def get_success_url(self):
-        return success_url
+        if user_login_form.is_valid():
+            user_login_form.save()
+
+            username = user_login_form.cleaned_data.get('username')
+            raw_password = user_login_form.cleaned_data.get('password1')
+
+            user = authenticate(username=username, password=raw_password)
+
+            login(request, user)
+
+            return HttpResponseRedirect(reverse_lazy('blog:blog-list'))
+
+    def get(self, request):
+        user_login_form = UserLoginForm()
+
+        context = {
+            'user_login_form': user_login_form
+        }
+
+        return render(request, 'user/login.html', context)
 
 class UserLogoutView(View):
     def get(self, request):

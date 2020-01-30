@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.btn-outline-gradient {
+.btn-outline-gradient-blue--light {
     width: 15rem;
     height: 4rem;
     
@@ -21,7 +21,7 @@
     border-width: 0.1rem;
 }
 
-.btn-outline-gradient:hover {
+.btn-outline-gradient-blue--light:hover {
     /*color: #aa80ff;*/
     cursor: pointer;
 

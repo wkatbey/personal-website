@@ -1,0 +1,41 @@
+.text-lg-form-wrapper {
+    font-size: 1.5rem;
+    color: #dc4bfc;
+}
+
+.form-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-lg-form-wrapper input {
+    height: 3.5rem;
+    font-size: 1.6rem;
+
+    border-image: linear-gradient(to right, #dc4bfc, #4b69fc);
+
+    border-image-slice: 1;
+
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.text-lg-form-wrapper input.blog-btn {
+    background-color: transparent;
+     border-image-slice: 0;
+    color: #dc4bfc;
+}
+
+.text-lg-form-wrapper input.blog-btn:hover {
+    cursor: pointer;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(230, 227, 255, 0.1),
+        rgba(60, 0, 255, 0.1),
+        rgba(230, 227, 255, 0.1)
+    );
+
+    border-width: 0;
+}
+
