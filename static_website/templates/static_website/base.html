@@ -8,29 +8,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Read up on me, Wassim Katbey, Full-Stack Software Developer. I wrote this website to display my
-    skillset and accomplishments">
+    <meta name="description" content="Software Development, Freelance, and Blogging">
     <meta name="author" content="Wassim Katbey">
     <title>Wassim Katbey</title>
-    <link rel="stylesheet" href="{% static 'static_website/buttons.css' %}">
-    <link rel="stylesheet" href="{% static 'static_website/navbar_style.css' %}">
+    <link rel="stylesheet" href="{% static 'sph_style/framework.css' %}">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'static_website/custom_stylesheet.css' %}">
-    <link rel="stylesheet" href="{% static 'static_website/fonts.css' %}">
-    <link rel="stylesheet" href="{% static 'static_website/spacing.css' %}">
-    <link rel="stylesheet" href="{% static 'static_website/hero_properties.css' %}">
-    <link rel="stylesheet" href="{% static 'static_website/icons.css' %}">
-    <link rel="stylesheet" href="{% static 'static_website/forms.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>
-    tinymce.init({
-      selector: '#text-editor'
-    });
-    </script>
     {% block head_elements %}
     {% endblock %}
 </head>
@@ -45,7 +32,7 @@
       <li class="nav-item">
         <a class="nav-text nav-text--light" href="{% url 'static_website:index' %}">
           <svg>
-            <use href="{% static 'static_website/icons/home.svg#home' %}"></use>
+            <use href="{% static 'sph_style/icons/home.svg#home' %}"></use>
           </svg> 
         </a>
       </li>
@@ -54,7 +41,7 @@
       <li class="nav-item">
         <a class="nav-text nav-text--light" href="{% url 'static_website:resume' %}">
           <svg>
-            <use href="{% static 'static_website/icons/resume.svg#resume' %}"></use>
+            <use href="{% static 'sph_style/icons/resume.svg#resume' %}"></use>
           </svg>
         </a>
       </li>
@@ -63,7 +50,7 @@
       <li class="nav-item">
         <a class="nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
           <svg>
-            <use href="{% static 'static_website/icons/blog.svg#blog' %}"></use>
+            <use href="{% static 'sph_style/icons/blog.svg#blog' %}"></use>
           </svg>
           <!-- <span class="svg-text">SkyBlue Blogging</span> -->
         </a>
@@ -76,7 +63,7 @@
       <li class = "nav-item">
         <a class="nav-text nav-text--light" href="http://github.com/wkatbey">
           <svg>
-            <use href="{% static 'static_website/icons/github.svg#github' %}"></use>
+            <use href="{% static 'sph_style/icons/github.svg#github' %}"></use>
           </svg>
           <!-- <span class="svg-text">Github</span> -->
         </a>

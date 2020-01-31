@@ -2,6 +2,11 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block head_elements %}
+<link rel="stylesheet" href="{% static 'static_website/backgrounds.css' %}">
+{% endblock %}
+
+
 {% block hero-image-text %}
 <div class="container-fluid hero-text">
   <p class="hero-home-heading text-center">Wassim Katbey</p>
@@ -10,20 +15,10 @@
   </p>
   <div class="text-center padding-top">
     <form action="#intro">
-      <button type="submit" id = "introButton" class="btn-outline-gradient-blue--light text-center">Meet Me</button>
+      <button type="submit" id = "introButton" class="btn-outline-blue text-center">Meet Me</button>
     </form>
   </div>
 </div>
-{% endblock %}
-
-{% block desktop-home-nav %}
-<li class="nav-item">
-  <a class="nav-text nav-text--light" href="{% url 'static_website:index' %}">
-    <svg>
-      <use href="{% static 'static_website/icons/home.svg#home' %}"></use>
-    </svg> 
-  </a>
-</li>
 {% endblock %}
 
 {% block hero-image-type %}
@@ -46,7 +41,7 @@
       </div>
     </div>
   </div>
-  <div class="black-background">
+  <div class="attributes-background">
   	<div class="container-fluid">
   		<p class = "heading-text text-center padding-bottom padding-top">What am I like? </p>
 	    <div class="row">

@@ -16,26 +16,18 @@
 
     border-image-slice: 1;
 
+    border-width: 0.1rem;
+
     box-shadow: none;
     -webkit-box-shadow: none;
+    
+    color: #4b69fc;
 }
 
-.text-lg-form-wrapper input.blog-btn {
-    background-color: transparent;
-     border-image-slice: 0;
+.text-lg-form-wrapper input:focus {
     color: #dc4bfc;
 }
 
-.text-lg-form-wrapper input.blog-btn:hover {
-    cursor: pointer;
-
-    background-image: linear-gradient(
-        to right,
-        rgba(230, 227, 255, 0.1),
-        rgba(60, 0, 255, 0.1),
-        rgba(230, 227, 255, 0.1)
-    );
-
-    border-width: 0;
+.text-lg-form-wrapper label {
+    margin-top: 1rem;
 }
-

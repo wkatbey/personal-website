@@ -4,19 +4,8 @@
 {% block head_elements %}
 <link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
 <link rel="stylesheet" href="{% static 'blog/spacing.css' %}"> 
-<link rel="stylesheet" href="{% static 'blog/hero_properties.css' %}"> 
 <link rel="stylesheet" href="{% static 'blog/fonts.css' %}">
 {% endblock %} 
-
-{% block desktop-blog-nav %}
-<li class="nav-item">
-    <a class="nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
-        <svg>
-        <use href="{% static 'static_website/icons/blog.svg#blog' %}"></use>
-        </svg>
-    </a>
-</li>
-{% endblock %}
 
 {% block custom_blog_head_elements %}
 
