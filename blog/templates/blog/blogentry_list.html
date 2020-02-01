@@ -2,22 +2,24 @@
 {% load static %} 
 
 {% block hero-image-type %}
-<div class="hero-blog-image
+<div class="hero-sub-image 
             {% if user.is_authenticated %} 
-            authenticated
+            purple
+            {% else %}
+            red
             {% endif %}">
 {% endblock %} 
 
 {% block hero-image-text %}
-    <div class="container-fluid hero-blog-text">
+    <div class="container-fluid hero-sub-text">
         {% if user.is_authenticated %}
-        <p class="hero-blog-heading text-center">Welcome, {{ user.first_name }}</p>
-        <p class="hero-blog-subheading text-center">
+        <p class="hero-sub-heading text-center">Welcome, {{ user.first_name }}</p>
+        <p class="hero-sub-subheading text-center">
             Read and Write Entries
         </p>
         {% else %}
-        <p class="hero-blog-heading text-center">Sapphire Blogging</p>
-        <p class="hero-blog-subheading text-center">
+        <p class="hero-sub-heading text-center">Sapphire Blogging</p>
+        <p class="hero-sub-subheading text-center">
             A Simple Journaling Platform
         </p>
         {% endif %}

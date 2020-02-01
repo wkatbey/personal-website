@@ -1,0 +1,8 @@
+.attributes-background {
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

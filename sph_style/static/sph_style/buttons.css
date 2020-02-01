@@ -1,0 +1,49 @@
+.buttons {
+    margin: 10%;
+    text-align: center;
+}
+
+.btn-outline-blue {
+    width: 15rem;
+    height: 4rem;
+    
+    color: white;
+
+    font-size: 1.6rem;
+
+    background-color: transparent;
+
+    border-image: linear-gradient(to right, #87d3ff, #ffffff);
+
+    border-image-slice: 1;
+
+
+    border-width: 0.1rem;
+}
+
+.btn-outline-blue:hover {
+    cursor: pointer;
+    background-color: rgba(253, 252, 255, 0.4);
+}
+
+.btn-borderless-purple {
+    background-color: transparent;
+    border-image-slice: 0;
+    border-width: 0 !important;
+    color: #dc4bfc;
+}
+
+.btn-borderless-purple:hover {
+    cursor: pointer;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(230, 227, 255, 0.1),
+        rgba(60, 0, 255, 0.1),
+        rgba(230, 227, 255, 0.1)
+    );
+
+    border-width: 0 !important;
+}
+
+
