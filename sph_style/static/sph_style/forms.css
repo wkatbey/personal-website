@@ -3,14 +3,19 @@
     color: #dc4bfc;
 }
 
+.text-lg-form-wrapper small {
+    font-size: 1rem;
+    color: #4b69fc !important;
+}
+
 .form-center {
     margin-left: auto;
     margin-right: auto;
 }
 
 .text-lg-form-wrapper input {
-    height: 3.5rem;
-    font-size: 1.6rem;
+    height: 2.99rem;
+    font-size: 1.5rem;
 
     border-image: linear-gradient(to right, #dc4bfc, #4b69fc);
 

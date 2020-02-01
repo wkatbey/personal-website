@@ -2,6 +2,10 @@
 {% load static %} 
 {% load crispy_forms_tags %}
 
+{% block custom_blog_head_elements %}
+<link rel="stylesheet" href="{% static 'user/forms.css' %}">
+{% endblock %}
+
 {% block hero-image-type %}
 <div class="hero-sub-image red">
 {% endblock %} 
