@@ -25,6 +25,10 @@
     font-size: 1.3rem !important;
 }
 
+.btn-dropdown-short {
+    height: 3rem !important;
+}
+
 .dropdown-toggle-wide {
     font-size: 1.3rem;
 }

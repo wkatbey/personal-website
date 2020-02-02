@@ -39,6 +39,12 @@
     border-width: 0.1rem;
 }
 
+.btn.btn-dropdown {
+    width: 2rem;
+    padding-top: 0rem;
+    padding-right: 1.6rem;
+}
+
 .btn-outline-blue--light:hover {
     cursor: pointer;
     background-color: rgba(253, 252, 255, 0.4);

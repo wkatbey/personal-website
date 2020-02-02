@@ -41,7 +41,7 @@
       </div>
       <div class="form-group pt-2">
         <div class="col-lg-7 form-center">
-          <div class=" {% if object %} text-right {% else %} text-center {% endif %}">
+          <div class="text-right">
             {% if object %}
             <div class="custom-control custom-checkbox mr-sm-2" style="display: inline-block">
               {{ form.private }}
@@ -50,15 +50,16 @@
             <button type="submit" class="btn btn-outline-blue--dark btn-wide">Save Changes</button>
             {% else %}
             <div class="btn-group">
-              <input type="submit" class="btn btn-borderless-deep-blue btn-wide" value="Post">
+              <button type="submit" class="btn btn-outline-blue--dark btn-wide">Post</button>
               
-              <button type="button" class="btn btn-borderless-deep-blue dropdown-toggle dropdown-toggle-wide" 
+              <button type="button" class="btn btn-outline-blue--dark btn-dropdown btn-dropdown-short" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Post Options Dropdown</span>
+                <i class="fas fa-sort-down"></i>
               </button>
   
               <div class="dropdown-menu">
-                <a type="button" class="btn btn-outline-primary dropdown-item" onClick='submitPrivatePost()'>Post Privately</a>
+                <a type="button" class="btn dropdown-item" onClick='submitPrivatePost()'>Post Privately</a>
               </div>
             </div>
           </div>
