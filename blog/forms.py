@@ -29,7 +29,8 @@ class BlogEntryForm(ModelForm):
             'text_entry': forms.Textarea(
                 attrs = {
                     'id': 'text-editor',
-                    'class': 'form-control'
+                    'class': 'form-control',
+                    'rows': '17'
                 }
             ),
             'private': forms.CheckboxInput(

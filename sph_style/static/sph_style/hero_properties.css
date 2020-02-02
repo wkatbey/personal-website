@@ -1,5 +1,9 @@
+.hero-text {
+    transform: translateY(10rem);
+}
+
 .hero-image {
-    background-image: url("./cover-image-3.jpg");
+    background-image: url("./images/cover-image.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,32 +11,71 @@
     height: 100vh;
 }
 
-.hero-resume {
-    background: linear-gradient(to top, #3d6eff, #4400ff);
+.hero-sub-image {   
     height: 30rem;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.hero-text {
-    transform: translateY(10rem);
+.hero-sub-image.red {
+    background-image: linear-gradient(to top, #5a52ff, #ff5291);
 }
 
-.hero-sub-page-text {
+.hero-sub-image.blue {
+    background: linear-gradient(to top, #3d6eff, #4400ff);
+}
+
+.hero-sub-image.purple {
+    background-image: linear-gradient(to top, #5a52ff, #ff52f1);
+}
+
+.hero-sub-image.hero-sm {
+    height: 10rem;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-sub-image.deep-blue  {
+    background-image: linear-gradient(to top, #1100ff, #0044ff);
+}
+
+.hero-sub-image.light-purple {
+    background-image: linear-gradient(to top, #9a8cff, #9354ff);
+}
+
+.hero-sub-image.noon-blue {
+    background-image: linear-gradient(to top, #8abdff, #6171ff);
+}
+
+.hero-sub-image.morning-red {
+    background-image: linear-gradient(to top, #ff8af7, #6171ff);
+}
+
+.hero-sub-image.morning-blue {
+    background-image: linear-gradient(to top, #4a80ff, #564aff);
+}
+
+.hero-sub-text {
     transform: translateY(7rem);
     color: white;
 }
 
-.hero-sub-page-heading {
+.hero-sub-heading {
     font-size: 2.9rem;
     font-weight: 400;
 }
 
-.hero-sub-page-subheading {
+.hero-sub-subheading {
     font-size: 1.9rem;
     font-weight: 400;
 }
+
+.hero-sub-sm-text {
+    transform: translateY(3.6rem);
+}
+
 
 .hero-home-heading {
     font-weight: 400;
@@ -72,11 +115,7 @@
         .hero-image {
             background: linear-gradient(to top, #429bf5, #0021f5);
         }
-
-  
     }
-
-  
 }
 
 /* Large Tablet and Small Laptop Displays */

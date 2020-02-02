@@ -144,6 +144,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_website/static/'),
     os.path.join(BASE_DIR, 'blog/static/'),
+    os.path.join(BASE_DIR, 'user/static/'),
+    os.path.join(BASE_DIR, 'sph_style/static/'),
 ]
 
 django_heroku.settings(locals())
