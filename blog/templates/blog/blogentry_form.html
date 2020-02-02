@@ -1,5 +1,9 @@
 {% extends 'blog/blog_base.html' %} 
-{% load static %} 
+{% load static %}
+
+{% block custom_blog_head_elements %}
+<link rel="stylesheet" href="{% static 'blog/forms.css' %}">
+{% endblock %}
 
 {% block hero-image-type %}
 <div class="hero-sub-image hero-sm deep-blue">
@@ -16,39 +20,46 @@
 
 {% block blog_body %}
 <div class="container">
-    <form id='blog-form' method='POST'>
+    <form id='blog-form' method='POST' class='text-lg-form-wrapper'>
       {% csrf_token %}
       <div class="form-group padding-top">
-        {{ form.category.label_tag }}
-        {{ form.category }}
+        <div class="col-lg-7 form-center">
+          {{ form.category.label_tag }}
+          {{ form.category }}  
+        </div>
       </div>
       <div class="form-group">
+        <div class="col-lg-7 form-center">
           {{ form.title.label_tag }}
           {{ form.title }}
+        </div>
       </div>
-      <div class="form-group">
-        {{ form.text_entry }}
+      <div class="form-group pt-2">
+        <div class="col-lg-7 form-center">
+          {{ form.text_entry }}
+        </div>
       </div>
-      <div class="row pt-2">
-        <div class="col-lg-12 text-right">
-
-
-          {% if object %}
-          <div class="custom-control custom-checkbox mr-sm-2" style="display: inline">
-            {{ form.private }}
-            <label class="custom-control-label" for="make-post-private">Make Post Private</label>
-          </div>
-          <input type="submit" class="btn btn-outline-primary" value="Save Changes">
-          {% else %}
-          <div class="btn-group">
-            <input type="submit" class="btn btn-outline-primary" value="Post">
-            
-            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="sr-only">Toggle Post Options Dropdown</span>
-            </button>
-
-            <div class="dropdown-menu">
-              <a type="button" class="btn btn-outline-primary dropdown-item" onClick='submitPrivatePost()'>Post Privately</a>
+      <div class="form-group pt-2">
+        <div class="col-lg-7 form-center">
+          <div class=" {% if object %} text-right {% else %} text-center {% endif %}">
+            {% if object %}
+            <div class="custom-control custom-checkbox mr-sm-2" style="display: inline-block">
+              {{ form.private }}
+              <label class="custom-control-label" for="make-post-private">Make Post Private</label>
+            </div>
+            <button type="submit" class="btn btn-outline-blue--dark btn-wide">Save Changes</button>
+            {% else %}
+            <div class="btn-group">
+              <input type="submit" class="btn btn-borderless-deep-blue btn-wide" value="Post">
+              
+              <button type="button" class="btn btn-borderless-deep-blue dropdown-toggle dropdown-toggle-wide" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Post Options Dropdown</span>
+              </button>
+  
+              <div class="dropdown-menu">
+                <a type="button" class="btn btn-outline-primary dropdown-item" onClick='submitPrivatePost()'>Post Privately</a>
+              </div>
             </div>
           </div>
           {% endif %}

@@ -29,7 +29,26 @@
     color: #4b69fc;
 }
 
-.text-lg-form-wrapper input:focus {
+.text-lg-form-wrapper select {
+    height: 2.99rem;
+    font-size: 1.5rem;
+    border-image: linear-gradient(to right, #0852ff, #4b69fc);
+    border-image-slice: 1;
+
+    color: #4b69fc;
+}
+
+.text-lg-form-wrapper textarea {
+    font-size: 1.5rem;
+
+    border-image: linear-gradient(to right, #0852ff, #4b69fc);
+    border-image-slice: 1;
+    color: #4b69fc;
+}
+
+.text-lg-form-wrapper input:focus, 
+.text-lg-form-wrapper textarea:focus, 
+.text-lg-form-wrapper select:focus  {
     color: #dc4bfc;
 }
 
