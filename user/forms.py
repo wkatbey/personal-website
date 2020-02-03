@@ -14,7 +14,7 @@ class UserLoginForm(AuthenticationForm):
         label="Username",
         widget=forms.TextInput(
             attrs={
-                'class': ''
+               'custom_field': 'Hello'
             }
         )
     )

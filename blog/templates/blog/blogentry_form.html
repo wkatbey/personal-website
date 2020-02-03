@@ -1,5 +1,6 @@
-{% extends 'blog/blog_base.html' %} 
+{% extends 'blog/blog_base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block custom_blog_head_elements %}
 <link rel="stylesheet" href="{% static 'blog/forms.css' %}">
@@ -19,55 +20,9 @@
 {% endblock %}
 
 {% block blog_body %}
-<div class="container">
-    <form id='blog-form' method='POST' class='text-lg-form-wrapper'>
-      {% csrf_token %}
-      <div class="form-group padding-top">
-        <div class="col-lg-7 form-center">
-          {{ form.category.label_tag }}
-          {{ form.category }}  
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-7 form-center">
-          {{ form.title.label_tag }}
-          {{ form.title }}
-        </div>
-      </div>
-      <div class="form-group pt-2">
-        <div class="col-lg-7 form-center">
-          {{ form.text_entry }}
-        </div>
-      </div>
-      <div class="form-group pt-2">
-        <div class="col-lg-7 form-center">
-          <div class="text-right">
-            {% if object %}
-            <div class="custom-control custom-checkbox mr-sm-2" style="display: inline-block">
-              {{ form.private }}
-              <label class="custom-control-label" for="make-post-private">Make Post Private</label>
-            </div>
-            <button type="submit" class="btn btn-outline-blue--dark btn-wide">Save Changes</button>
-            {% else %}
-            <div class="btn-group">
-              <button type="submit" class="btn btn-outline-blue--dark btn-wide">Post</button>
-              
-              <button type="button" class="btn btn-outline-blue--dark btn-dropdown btn-dropdown-short" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Post Options Dropdown</span>
-                <i class="fas fa-sort-down"></i>
-              </button>
-  
-              <div class="dropdown-menu">
-                <a type="button" class="btn dropdown-item" onClick='submitPrivatePost()'>Post Privately</a>
-              </div>
-            </div>
-          </div>
-          {% endif %}
-        </div>
-      </div>
-    </form>
-</div>
+  <div id="sb-blog-form">
+    {% crispy form %}
+  </div>
 {% endblock %}
 
 {% block custom_footer_elements %}
@@ -81,3 +36,8 @@
     </div>
 </div>
 {% endblock %}
+
+{% block custom_javascript_includes %}
+<script src="{% static 'blog/js/blogentry_form.js' %}"></script>
+{% endblock %}
+
