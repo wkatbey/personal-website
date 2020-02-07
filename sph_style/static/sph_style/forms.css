@@ -34,6 +34,7 @@
     font-size: 1.5rem;
     border-image: linear-gradient(to right, #0852ff, #4b69fc);
     border-image-slice: 1;
+    border-width: 0.1rem;
 
     color: #4b69fc;
 }
@@ -42,6 +43,8 @@
     font-size: 1.5rem;
 
     border-image: linear-gradient(to right, #0852ff, #4b69fc);
+
+    border-width: 0.1rem;
     border-image-slice: 1;
     color: #4b69fc;
 }

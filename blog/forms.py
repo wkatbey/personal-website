@@ -16,14 +16,14 @@ class BlogEntryForm(ModelForm):
         self.helper.layout = Layout(
             Div(
                 Row(
-                    Column(Field('category', v_model='category'), css_class='col-lg-5 form-center')
+                    Column(Field('category', v_model='category'), css_class='col-lg-4 form-center')
                 ),
                 Row(
-                    Column(Field('title', v_model='title'), css_class='col-lg-5 form-center')
+                    Column(Field('title', v_model='title'), css_class='col-lg-4 form-center')
                 ),
                 Row(
                     Column(Field('text_entry', v_model='text_entry', rows='17'),
-                           css_class='col-lg-5 form-center')
+                           css_class='col-lg-4 form-center')
                 ),
                 Row(
                     Column(
@@ -49,7 +49,9 @@ class BlogEntryForm(ModelForm):
                                   <button type="button" class="btn btn-outline-blue--dark btn-dropdown btn-dropdown-short"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="sr-only">Toggle Post Options Dropdown</span>
-                                    <i class="fas fa-sort-down"></i>
+                                    <span>
+                                        <i class="fas fa-sort-down"></i>
+                                    </span>
                                   </button>
                     
                                   <div class="dropdown-menu">
@@ -60,7 +62,7 @@ class BlogEntryForm(ModelForm):
                             """),
                             css_class='text-right'
                         ),
-                        css_class='col-lg-5 form-center'
+                        css_class='col-lg-4 form-center'
                     )
                 ),
                 css_class='text-lg-form-wrapper',
