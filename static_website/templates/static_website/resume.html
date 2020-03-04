@@ -19,58 +19,113 @@
 {% block body %}
   <main>
     <div class="container">
-        <p class="heading-text text-center padding-top--2 padding-bottom--2">Objective</p>
-        <p class="reading-font-lg text-center">Front-End, Back-End, or Full-Stack Web-App Development</p>
-      
-        <p class=" heading-text text-center padding-top--2 padding-bottom--2">Education</p>
-        <div class="row">
-            <div class = "col-lg-6">
-                <p class="text-center reading-font-lg">Wayne State University</p>
-                <p class="text-center reading-font-lg">B.S., Computer Science</p>
-            </div>
-            <div class="col-lg-6">
-                <p class="text-center reading-font-lg">Average GPA: 3.7</p>
-                <p class="text-center reading-font-lg">Major GPA: 4.0</p>
-            </div>
+      <p class="heading-text text-center padding-top--2 padding-bottom--2">Objective</p>
+      <p class="reading-font-lg text-center">Front-End, Back-End, or Full-Stack Web-App Development</p>
+    
+      <p class=" heading-text text-center padding-top--2 padding-bottom--2">Education</p>
+      <div class="row">
+      <div class = "col-lg-6">
+            <p class="text-center reading-font-lg">Wayne State University</p>
+            <p class="text-center reading-font-lg">B.S., Computer Science</p>
         </div>
-
-        <p class="heading-text text-center padding-top--2 padding-bottom--2 icon-heading-container">
-            Open-Source (Side) Projects
-            <i class="material-icons heading-icon">
-                code
-            </i>
-        </p>
-        <div class="row">
-            <div class="col-lg-6">
-                <p class="attribute-heading-text">
-                    <a class="gray-link" href="https://myzipcode.net" target="_blank">What's My Zipcode?</a>
-                </p>
-                <p class="reading-font">Django and Angular, hosted through Heroku</p>
-                <p class="attribute-body-text">
-                    A web application, whereby both the 5 and 4 digit zipcodes 
-                    (for any given location in the U.S.) are displayed. 
-                    (Utilizes USPS’ Address Information API)
-                </p>
-                <p class="attribute-body-text"></p>
-            </div>
-            <div class="col-lg-6">
-                <p class="attribute-heading-text">
-                    <a class="gray-link" href="https://myzipcode.net" target="_blank">Portfolio &Aacute; Blogging App</a>
-                </p>
-                <p class="reading-font">Django, PostgreSQL, hosted through Heroku</p>
-                <p class="attribute-body-text">
-
-                </p>
-            </div>
+        <div class="col-lg-6">
+            <p class="text-center reading-font-lg">Average GPA: 3.7</p>
+            <p class="text-center reading-font-lg">Major GPA: 4.0</p>
         </div>
-
+      </div>
+      <p class="heading-text text-center padding-top--2 padding-bottom--2 icon-heading-container">
+          Open-Source (Side) Projects
+          <i class="material-icons heading-icon">
+              code
+          </i>
+      </p>
+    </div>
+    <div class="morning-blue">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 pt-5 pt-md-2 pt-lg-0">
+            <p class="attribute-heading-text">
+                <a class="gray-link" href="https://wassimkatbey.com" target="_blank">Portfolio & Blogging App</a>
+            </p>
+            <p class="reading-font">Django, PostgreSQL, hosted through Heroku</p>
+            <p class="attribute-body-text">
+                The website you're currently on; a multi-page Django-based web application! Certain portions of the home 
+                page are actually database-driven -- i.e. CMS
+                <br><br>
+                A blogging application runs within the same source code (The 'Blog' button up top). It was later extracted into 
+                its own project. 
+            </p>
+          </div>
+          <div class="col-lg-6 pt-md-2 pt-lg-0">
+              <p class="attribute-heading-text">
+                  <a class="gray-link" href="https://myzipcode.net" target="_blank">What's My Zipcode?</a>
+              </p>
+              <p class="reading-font">Django and Angular, hosted through Heroku</p>
+              <p class="attribute-body-text">
+                  A web application, wherein both the 5 and 4 digit zipcodes 
+                  (for any given location in the U.S.) are displayed. Utilizes USPS’ Address Information API. 
+                  <br><br>
+                  There are two versions of this application! It was
+                  originally written with a .NET Core Back-End, you can find the older source code 
+                  <a href="https://github.com/wkatbey/ZipPostalCodeLookup" class="gray-link">here</a>.
+              </p>
+              <p class="attribute-body-text"></p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 pt-5 pt-md-2 pt-lg-4">
+              <p class="attribute-heading-text">
+                <a class="gray-link" href="https://github.com/wkatbey/SapphireBlogging" target="_blank">Sapphire Blogging</a>
+              </p>
+              <p class="reading-font">Django, Vue, PostgreSQL, to be hosted through Heroku</p>
+              <p class="attribute-body-text">
+                  A blogging application, with a focus on user-oriented design. The colors and gradients on each individual page 
+                  communicate that page's purpose to the user. 
+                  
+                  The blogging experience is rich, and immersive.
+              </p>
+            </div>
+            <div class="col-lg-6 pt-5 pt-md-2 pt-lg-4">
+              <p class="attribute-heading-text">
+                <a class="gray-link" href="https://github.com/DSWhite96/Campus_Price_And_Dice" target="_blank">Price & Dice</a>
+              </p>
+              <p class="reading-font">Django</p>
+              <p class="attribute-body-text">
+                Working together with a team to develop a web application that allows users to compare prices and view food items 
+                among restaurants on campus.
+              </p>
+            </div>
+          </div>
+        </div>  
+      </div>
+     
         <p class="heading-text text-center padding-top--2 padding-bottom--2">
             Work-Related Projects  
         </p>
         <div class="row">
             <div class="col-lg-6">
-                <p class="reading-font-lg text-center gray-link">Call Harbor: Project 'Betroit'</p>
-                <p class="card-body-text">
+              <p class="attribute-heading-text">Automated Media Inc: Contents Protected</p>
+              <p class="reading-font">Angular, ASP.NET Core, Transact-SQL, and MongoDB</p>
+              <p class="attribute-body-text">
+                During my employment at Automated Media Inc, I designed and architected a sub-application that 
+                functions similarly to a task manager. Database schemas, back-end endpoints, and a corresponding user interface
+                were created ontop of an existing application.
+              </p>
+            </div>
+            <div class="col-lg-6 pt-5 pt-md-0">
+              <p class="attribute-heading-text">Static Website - Contents Protected</p>
+              <p class="reading-font">Written in HTML, CSS, Boostrap, Javascript, and PHP</p>
+              <p class="attribute-body-text">
+                I designed a static page during my employment at Active Solutions Group. It consists of a Landing Page, Products page, Team page, and Contact Us page. 
+                The Contact Us page sends an email to staff through PHP. Additionally, Contact Us makes use of Google’s Maps Javascript API. 
+              </p>
+            </div>
+        </div>  
+        <div class="row pt-5">
+          <div class="col-lg-9">
+              <p class="attribute-heading-text">Call Harbor: Project 'Betroit'</p>
+              <p class="reading-font">AngularJS, PHP, & mySQL</p>
+              <p class="attribute-body-text">
                 As a Full-Stack Developer, I developed a web application whose purpose is to automate the new-client process. 
                 There are two interfaces to the application: Client-Side, and Staff-Side.
                 <br><br>
@@ -80,71 +135,9 @@
                 From the Client-Side, the client uses the pin to log into a customized form whereby they enter in their client data. 
                 Furthermore, this side of the application utilizes REST API services. 
                 The Client-Side app is complex, tabbed, and uses an extensive verification process. 
-                </p>
-                <p class="reading-font">Written in AngularJS, PHP, & mySQL</p>
-            </div>
-
-
-        <div class="col-lg-6 col-sm-12 pt-lg-0 pt-sm-3">
-          <p class="reading-font-lg text-center gray-link"><a>Static Website - Contents Protected</a></p>
-          <p class="card-body-text">
-            I designed a static page during my employment at Active Solutions Group. It consists of a Landing Page, Products page, Team page, and Contact Us page. 
-            The Contact Us page sends an email to staff through PHP. Additionally, Contact Us makes use of Google’s Maps Javascript API. 
-          </p>
-          <p class="reading-font">Written in HTML, CSS, Boostrap, Javascript, and PHP</p>
+              </p>
+          </div>
         </div>
-      </div>
-      <hr>
-      <div class=" padding-top--2 padding-bottom--2">
-        <p class="heading-text">Open-Source (Side) Projects</p>
-     
-      </div>
-      <p class="subheading-text text-center padding-bottom">Click on a project's name to view its Github</p>
-      <div class="row">
-        <div class="col-lg-4">
-          <p class="resume-heading text-center">
-            <a class="gray-link" href="https://github.com/DSWhite96/Campus_Price_And_Dice">Campus Price & Dice</a>
-          </p>
-          <p class="card-body-text">
-            Working together with a team to develop a web application that allows users to compare prices and view food items 
-            among restaurants on campus.
-          </p>
-          <p class="reading-font">Written in Django</p>
-        </div>
-        <div class="col-lg-4 col-sm-12 pt-lg-0 pt-sm-3">
-          <p class="resume-heading text-center ">
-            <a class="gray-link" href="https://github.com/wkatbey/static_portfolio">Online Portfolio</a>
-          </p>
-          <p class="card-body-text">
-            Wrote a website to host my resume and projects. Includes an introduction and a resume page. The contents of the website
-            are responsive to an extent.
-          </p>
-          <p class="reading-font">Written in HTML, CSS, Bootstrap</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-4 col-sm-12 pt-lg-0 pt-sm-3">
-          <p class="resume-heading  text-center">
-            <a class="gray-link" href="https://github.com/wkatbey/House-Management-Application">House Management</a>
-          </p>
-          <p class="card-body-text">
-            User can create a house with several appliances (doors, lights, air conditioners). Following
-            creation, a house’s appliances can be manipulated.
-          </p>
-          <p class="reading-font">Written in C++, runs in the console</p>
-        </div>
-        <div class="col-lg-4 col-sm-12 pt-lg-0 pt-sm-3">
-          <p class="resume-heading text-center">
-            <a class="gray-link" href="https://github.com/wkatbey/Student-Teacher-Database">Student/Teacher App</a>
-          </p>
-          <p class="card-body-text">
-            User can create, save, and load student and teacher database. Bank Account functionality
-            implemented. Developed as a Term Project for Computer Science 1.
-          </p>
-          <p class="reading-font">Written in C++, runs in the console</p>
-        </div>
-      </div>
       <hr>
       <div class="icon-heading-container padding-top--2 padding-bottom--2">
           <p class="heading-text">My Skillset</p>
@@ -162,29 +155,6 @@
         <p>Git Bash</p>
         <p>Algorithm Analysis</p>
         <p>Data Structures</p>
-      </div>
-      <div class="icon-heading-container padding-top--2 padding-bottom--2">
-          <p class="heading-text">References</p>
-          <i class="material-icons heading-icon">
-              people
-          </i>
-      </div>
-      <div class = "row text-center body-text">
-        <div class="col-lg-4">
-              <p>Daniel Ouellette</p>
-              <p>Daniel Grosu</p>
-              <p>Md Mehedi Hasan</p>
-        </div>
-        <div class="col-lg-4 hide-on-mobile">
-              <p>Wayne State University</p>
-              <p>Wayne State University</p>
-              <p>Wayne State University</p>
-        </div>
-        <div class="col-lg-4 hide-on-mobile">
-              <p>fx9807@wayne.edu</p>
-              <p>dgrosu@wayne.edu</p>
-              <p>md.mehedi.hasan@wayne.edu</p>
-        </div>
       </div>
     </div>
   </main>

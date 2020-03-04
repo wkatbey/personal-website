@@ -37,23 +37,23 @@
     background-size: cover;
 }
 
-.hero-sub-image.deep-blue  {
+.deep-blue  {
     background-image: linear-gradient(to top, #1100ff, #0044ff);
 }
 
-.hero-sub-image.light-purple {
+.light-purple {
     background-image: linear-gradient(to top, #9a8cff, #9354ff);
 }
 
-.hero-sub-image.noon-blue {
+.noon-blue {
     background-image: linear-gradient(to top, #8abdff, #6171ff);
 }
 
-.hero-sub-image.morning-red {
+.morning-red {
     background-image: linear-gradient(to top, #ff8af7, #6171ff);
 }
 
-.hero-sub-image.morning-blue {
+.morning-blue {
     background-image: linear-gradient(to top, #4a80ff, #564aff);
 }
 
