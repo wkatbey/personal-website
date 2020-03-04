@@ -44,3 +44,19 @@ html {
 .gray-link {
     color: var(--gray-link);
 }
+
+.text-white {
+    color: white;
+}
+
+.text-cyan {
+    color: lightcyan;
+}
+
+.lightblue-link {
+    color: lightblue;
+}
+
+.lightblue-link:hover {
+    color: aliceblue;
+}

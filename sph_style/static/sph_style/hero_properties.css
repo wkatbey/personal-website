@@ -18,15 +18,15 @@
     background-size: cover;
 }
 
-.hero-sub-image.red {
+.red {
     background-image: linear-gradient(to top, #5a52ff, #ff5291);
 }
 
-.hero-sub-image.blue {
+.blue {
     background: linear-gradient(to top, #3d6eff, #4400ff);
 }
 
-.hero-sub-image.purple {
+.purple {
     background-image: linear-gradient(to top, #5a52ff, #ff52f1);
 }
 
@@ -35,6 +35,10 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.white--transition-to-morning-blue {
+    background-image: linear-gradient(to top, #564aff, #958cff, #b3adff, #d0ccff, #ffffff, #ffffff);
 }
 
 .deep-blue  {
@@ -55,6 +59,14 @@
 
 .morning-blue {
     background-image: linear-gradient(to top, #4a80ff, #564aff);
+}
+
+.morning-blue--transition-to-blue {
+    background-image: linear-gradient(to top, #4400ff, #4a80ff);
+}
+
+.clear-white {
+    color: black !important;
 }
 
 .hero-sub-text {
