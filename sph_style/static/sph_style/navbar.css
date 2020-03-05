@@ -30,8 +30,14 @@
     color: black;
 }
 
-.nav-text--light {
+.nav-text {
     color: white;
+    fill: white;
+}
+
+.clear-white .nav-text {
+    color: black;
+    fill: black;
 }
 
 .nav-text--dark:hover {
@@ -39,7 +45,7 @@
     /*border-bottom-color: gray;*/
 }
 
-.nav-text--light:hover {
+.nav-text:hover {
     color: #cccecf;
     fill: #cccecf;
 }

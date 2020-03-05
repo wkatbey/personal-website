@@ -1,4 +1,4 @@
-{% load static %}
+﻿{% load static %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
@@ -24,56 +24,56 @@
 <body class="bg-light">
 
 {% block hero-image-type %}
-<div class = "hero-image">
-{% endblock %}
- <nav>
-    <ul class="navbar-container">
-    {% block desktop-home-nav %}
-      <li class="nav-item">
-        <a class="nav-text nav-text--light" href="{% url 'static_website:index' %}">
-          <svg>
-            <use href="{% static 'sph_style/icons/home.svg#home' %}"></use>
-          </svg> 
-        </a>
-      </li>
+<div class="hero-image">
     {% endblock %}
-    {% block desktop-resume-nav %}
-      <li class="nav-item">
-        <a class="nav-text nav-text--light" href="{% url 'static_website:resume' %}">
-          <svg>
-            <use href="{% static 'sph_style/icons/resume.svg#resume' %}"></use>
-          </svg>
-        </a>
-      </li>
+    <nav>
+        <ul class="navbar-container">
+            {% block desktop-home-nav %}
+            <li class="nav-item">
+                <a class="nav-text" href="{% url 'static_website:index' %}">
+                    <svg>
+                        <use href="{% static 'sph_style/icons/home.svg#home' %}"></use>
+                    </svg>
+                </a>
+            </li>
+            {% endblock %}
+            {% block desktop-resume-nav %}
+            <li class="nav-item">
+                <a class="nav-text" href="{% url 'static_website:resume' %}">
+                    <svg>
+                        <use href="{% static 'sph_style/icons/resume.svg#resume' %}"></use>
+                    </svg>
+                </a>
+            </li>
+            {% endblock %}
+            {% block desktop-blog-nav %}
+            <li class="nav-item">
+                <a class="nav-text" href="{% url 'blog:blog-list' %}">
+                    <svg>
+                        <use href="{% static 'sph_style/icons/blog.svg#blog' %}"></use>
+                    </svg>
+                    <!-- <span class="svg-text">SkyBlue Blogging</span> -->
+                </a>
+            </li>
+            {% endblock %}
+            {% block blog-profile-link %}
+            {% endblock %}
+            {% block blog-create-link %}
+            {% endblock %}
+            <li class="nav-item">
+                <a class="nav-text" href="http://github.com/wkatbey">
+                    <svg>
+                        <use href="{% static 'sph_style/icons/github.svg#github' %}"></use>
+                    </svg>
+                    <!-- <span class="svg-text">Github</span> -->
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% block hero-image-text %}
+    <div class="hero-text text-center">
+    </div>
     {% endblock %}
-    {% block desktop-blog-nav %}
-      <li class="nav-item">
-        <a class="nav-text nav-text--light" href="{% url 'blog:blog-list' %}">
-          <svg>
-            <use href="{% static 'sph_style/icons/blog.svg#blog' %}"></use>
-          </svg>
-          <!-- <span class="svg-text">SkyBlue Blogging</span> -->
-        </a>
-      </li>
-    {% endblock %}
-    {% block blog-profile-link %}
-    {% endblock %}
-    {% block blog-create-link %}
-    {% endblock %}
-      <li class = "nav-item">
-        <a class="nav-text nav-text--light" href="http://github.com/wkatbey">
-          <svg>
-            <use href="{% static 'sph_style/icons/github.svg#github' %}"></use>
-          </svg>
-          <!-- <span class="svg-text">Github</span> -->
-        </a>
-      </li>
-    </ul>
-  </nav>
-  {% block hero-image-text %}
-  <div class = "hero-text text-center">
-  </div>
-  {% endblock %}
 </div>
 
 
@@ -81,49 +81,29 @@
 
 {% endblock %}
 
-
-
-<footer class="footer" style = "margin-top: 5%">
 {% block custom_footer_elements %}
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <a class="text-muted" href="https://icons8.com">
-          Check out Icons8! I used their icons
-        </a>
-      </div>
+<footer class="footer" style="margin-top: 5%">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <a class="text-muted" href="https://icons8.com">
+                    Check out Icons8! I used their icons
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <span class="text-muted">Copyright &copy Wassim Katbey 2018</span>
+            </div>
+        </div>
+        <br>
     </div>
-  
-    <div class="row">
-      <div class="col-lg-6">
-        <span class="text-muted">Copyright &copy Wassim Katbey 2018</span>
-      </div>
-    </div>
-    <br>
-  </div>
-{% endblock %}   
 </footer>
+{% endblock %}
 
 
-
-  <!-- Main Quill library -->
-  <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-
-  <script>
-  var quill = new Quill('#editor-container', {
-    modules: {
-      toolbar: [
-        [{ header: [1, 2, false] }],
-        ['bold', 'italic', 'underline'],
-        ['image', 'code-block']
-      ]
-    },
-    placeholder: 'Compose an epic...',
-    theme: 'snow'  // or 'bubble'
-  });
-  </script>
-  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
-  <script src="{% static 'blog/js/blogentry_form.js' %}"></script>
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
+<script src="{% static 'blog/js/blogentry_form.js' %}"></script>
 </body>
 </html>

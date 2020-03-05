@@ -18,15 +18,15 @@
     background-size: cover;
 }
 
-.hero-sub-image.red {
+.red {
     background-image: linear-gradient(to top, #5a52ff, #ff5291);
 }
 
-.hero-sub-image.blue {
+.blue {
     background: linear-gradient(to top, #3d6eff, #4400ff);
 }
 
-.hero-sub-image.purple {
+.purple {
     background-image: linear-gradient(to top, #5a52ff, #ff52f1);
 }
 
@@ -37,24 +37,36 @@
     background-size: cover;
 }
 
-.hero-sub-image.deep-blue  {
+.white--transition-to-morning-blue {
+    background-image: linear-gradient(to top, #564aff, #958cff, #ffffff, #ffffff, #ffffff, #ffffff);
+}
+
+.deep-blue  {
     background-image: linear-gradient(to top, #1100ff, #0044ff);
 }
 
-.hero-sub-image.light-purple {
+.light-purple {
     background-image: linear-gradient(to top, #9a8cff, #9354ff);
 }
 
-.hero-sub-image.noon-blue {
+.noon-blue {
     background-image: linear-gradient(to top, #8abdff, #6171ff);
 }
 
-.hero-sub-image.morning-red {
+.morning-red {
     background-image: linear-gradient(to top, #ff8af7, #6171ff);
 }
 
-.hero-sub-image.morning-blue {
+.morning-blue {
     background-image: linear-gradient(to top, #4a80ff, #564aff);
+}
+
+.morning-blue--transition-to-blue {
+    background-image: linear-gradient(to top, #4400ff, #4a80ff);
+}
+
+.clear-white {
+    color: black !important;
 }
 
 .hero-sub-text {
