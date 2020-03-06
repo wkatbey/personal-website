@@ -1,0 +1,7 @@
+-- PROJECT_COUNT -- 5
+The website you're currently on; a multi-page Django-based web application! Certain portions of the home page are actually database-driven -- i.e. CMS
+
+A blogging application runs within the same source code (The 'Blog' button up top). It was later extracted into its own project.
+-- TEXT DIVIDER --
+A blogging application, with a focus on user-oriented design. The colors and gradients on each individual page communicate that page's purpose to the user. The blogging experience is rich, and immersive.
+-- TEXT END --

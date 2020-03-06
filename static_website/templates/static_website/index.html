@@ -41,45 +41,26 @@
       </div>
     </div>
   </div>
-  <div class="attributes-background">
-  	<div class="container-fluid">
-  		<p class = "heading-text text-center padding-bottom padding-top">What am I like? </p>
-	    <div class="row">
-	      <div class="col-lg-2"></div>
-	      <div class="col-lg-7">
-	        <div class="attribute-heading-text padding-bottom">>>> Problem Oriented</div>
-	        <div class = "attribute-body-text text-left">
-	          As a junior developer, I encounter many problems while programming. My first solution is to reference
-            official documentation wherever I can, so long as it's relevant. From there I look for other sources to
-            see if anybody else has encountered the same problem. Knowing how to search for what I'm looking for is a
-            skill that took some time to develop.
-	        </div>
-	      </div>
-	    </div>
-	    <br>
-	    <div class="row">
-	      <div class="col-lg-3"></div>
-	      <div class="col-lg-7">
-	        <div class="attribute-heading-text padding-bottom">>>> Self Motivated </div>
-	        <div class = "attribute-body-text text-left">
-            I love programming and have the drive to work on many different projects. I love learning frameworks and using API's
-            I've never used before. Additionally, I like having a small project I can work on whenever I have the time.
-	        </div>
-	      </div>
-	    </div>
-	    <br>
-	    <div class="row">
-	      <div class="col-lg-4"></div>
-	      <div class="col-lg-7">
-	        <div class="attribute-heading-text padding-bottom">>>> Ambitious</div>
-	        <div class = "attribute-body-text text-left">
-            Programming is a very serious tool and can be used to create a very large (and useful) project. I'd like to play
-            a part in the development of a great product.
-	        </div>
-	      </div>
-	    </div>
-	    <br><br><br>
-  	</div>
+  <div class="morning-blue">
+      <p class="heading-text text-center pb-5 icon-heading-container">
+          {{ current_projects_section.heading }} 
+          <img src="{{ current_projects_section.heading_icon }}" />
+      </p>
+      <div class="row">
+          {% for project in current_projects_section.projects %}
+              <div class="col-lg-6 pt-5 pt-md-2 pt-lg-0">
+                  <p class="attribute-heading-text">
+                      <a class="lightblue-link" href="{{ project.link }}" target="_blank">
+                        {{ project.heading }}
+                      </a>
+                  </p>
+                  <p class="reading-font">{{ project.tech_stack }}</p>
+                  <p class="attribute-body-text">
+                      {{ project.description | linebreaks}}
+                  </p>
+              </div>
+          {% endfor %}
+      </div>
   </div>
   <div class="container">
 
