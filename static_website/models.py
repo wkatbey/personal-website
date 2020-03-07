@@ -1,4 +1,5 @@
 from django.db.models import Model
+from django.db import models
 
 class PageSectionText(Model):
 	value = models.TextField()
@@ -16,10 +17,12 @@ class HomePage(Model):
 
 class CurrentProject(Model):
 	heading = models.TextField()
-	heading_icon = models.TextField()
 
 	tech_stack = models.TextField()
 	description = models.TextField()
 
 class CurrentProjectsSection(Model):
+	heading = models.TextField()
+	heading_icon = models.TextField()
+
 	projects = models.ManyToManyField(CurrentProject)
