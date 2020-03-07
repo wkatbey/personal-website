@@ -26,3 +26,4 @@ class CurrentProjectsSection(Model):
 	heading_icon = models.TextField()
 
 	projects = models.ManyToManyField(CurrentProject)
+

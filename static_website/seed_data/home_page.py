@@ -51,7 +51,7 @@ def get_lets_get_in_contact_texts():
 				else:
 					first_col_text += line
 
-	return [ first_col_text, second_col_text ]
+	return [first_col_text, second_col_text]
 
 
 
@@ -67,7 +67,7 @@ class HomePageFileLoader():
 		self.home_page = None
 
 
-	def seed_home_page(self):
+	def load(self):
 		self.seed_page_sections()
 
 		intro_text = get_intro_text()

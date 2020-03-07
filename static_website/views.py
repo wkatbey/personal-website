@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from .models import *
 from .tools.mapping import *
 from .seed_data.home_page import HomePageFileLoader
+from .seed_data.current_projects import CurrentProjectsFileLoader
 
 COMPANY_EMAIL = 'katbeywassim@gmail.com'
 DEFAULT_SUBJECT = 'Website Email'
@@ -19,10 +20,16 @@ class Home(View):
         # database
         home_page_model = HomePage.objects.all().first()
 
+        current_projects_section_model = CurrentProjectsSection.objects().all().first()
+
         if not home_page_model:
             home_page_model = HomePageFileLoader().seed_home_page()
 
+        if not current_projects_section_model:
+            current_projects_section_model = CurrentProjectsFileLoader().load()
+
         home_page = construct_home_page_from_model(home_page_model)
+        current_projects_section = construct_current_projects_section_from_model(current_projects_section_model)
             
         context = {
             'home_page': home_page,
