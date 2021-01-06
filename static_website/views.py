@@ -20,7 +20,7 @@ class Home(View):
         # database
         home_page_model = HomePage.objects.all().first()
 
-        current_projects_section_model = CurrentProjectsSection.objects().all().first()
+        current_projects_section_model = CurrentProjectsSection.objects.all().first()
 
         if not home_page_model:
             home_page_model = HomePageFileLoader().seed_home_page()

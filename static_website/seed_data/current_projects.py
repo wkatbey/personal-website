@@ -24,7 +24,7 @@ class CurrentProjectsFileLoader:
 					self.project_descriptions = [''] * project_count
 					print("Project Count" + str(project_count))
 				else:
-					self.project_descriptions[index] += line
+					self.project_descriptions.append(line)
 
 	def seed_current_projects_section(self):
 
