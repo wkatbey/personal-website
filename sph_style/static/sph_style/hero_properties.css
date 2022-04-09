@@ -5,7 +5,7 @@
 }
 
 .hero-image {
-    background: linear-gradient(to top, #429bf5, #0021f5);
+    background: radial-gradient(circle at 150%, #00d4ff, #ffc1f9, #00d4ff);
     height: 100vh;
 }
 
